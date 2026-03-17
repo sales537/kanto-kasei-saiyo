@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const STORAGE_KEY = "kantoKaseiLP";
+  const STORAGE_KEY_PUBLISHED = "kantoKaseiLP";
+  const STORAGE_KEY_DRAFT = "kantoKaseiLP_draft";
+
+  // Track uploaded file data (base64)
+  const uploadedFiles = {};
 
   // ===== Section navigation =====
   const sidebarLinks = document.querySelectorAll(".sidebar-link");
@@ -9,8 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   sidebarLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
-      const sectionId = link.dataset.section;
-      showSection(sectionId);
+      showSection(link.dataset.section);
     });
   });
 
@@ -24,22 +27,20 @@ document.addEventListener("DOMContentLoaded", () => {
     if (target) {
       target.style.display = "block";
       target.style.animation = "none";
-      target.offsetHeight; // force reflow
+      target.offsetHeight;
       target.style.animation = "";
     }
     if (activeLink) {
       activeLink.classList.add("active");
       topbarTitle.textContent = activeLink.textContent.trim();
     }
-
-    // Close mobile sidebar
     closeMobileSidebar();
   }
 
   // ===== Mobile sidebar toggle =====
   const sidebar = document.getElementById("sidebar");
   const topbarMenu = document.getElementById("topbar-menu");
-  let overlay = document.createElement("div");
+  const overlay = document.createElement("div");
   overlay.className = "sidebar-overlay";
   document.body.appendChild(overlay);
 
@@ -55,92 +56,301 @@ document.addEventListener("DOMContentLoaded", () => {
     overlay.classList.remove("show");
   }
 
-  // ===== Load saved data into form =====
+  // ===== File Upload Zones =====
+  document.querySelectorAll(".upload-zone").forEach((zone) => {
+    const fieldKey = zone.dataset.upload;
+    const acceptTypes = zone.dataset.accept || "*/*";
+    const contentEl = zone.querySelector(".upload-zone-content");
+    const previewEl = zone.querySelector(".upload-zone-preview");
+    const removeBtn = zone.querySelector(".upload-zone-remove");
+
+    // Create hidden file input
+    const fileInput = document.createElement("input");
+    fileInput.type = "file";
+    fileInput.accept = acceptTypes;
+    fileInput.hidden = true;
+    zone.appendChild(fileInput);
+
+    // Click to upload
+    zone.addEventListener("click", (e) => {
+      if (e.target === removeBtn || e.target.closest(".upload-zone-remove")) return;
+      fileInput.click();
+    });
+
+    // File selected
+    fileInput.addEventListener("change", () => {
+      if (fileInput.files[0]) {
+        handleFileUpload(zone, fieldKey, fileInput.files[0]);
+      }
+    });
+
+    // Drag and drop
+    zone.addEventListener("dragover", (e) => {
+      e.preventDefault();
+      zone.classList.add("drag-over");
+    });
+
+    zone.addEventListener("dragleave", () => {
+      zone.classList.remove("drag-over");
+    });
+
+    zone.addEventListener("drop", (e) => {
+      e.preventDefault();
+      zone.classList.remove("drag-over");
+      if (e.dataTransfer.files[0]) {
+        handleFileUpload(zone, fieldKey, e.dataTransfer.files[0]);
+      }
+    });
+
+    // Remove button
+    removeBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      clearUpload(zone, fieldKey);
+    });
+  });
+
+  function handleFileUpload(zone, fieldKey, file) {
+    const isImage = file.type.startsWith("image/");
+    const isVideo = file.type.startsWith("video/");
+    const maxSize = isVideo ? 20 * 1024 * 1024 : 5 * 1024 * 1024;
+
+    if (file.size > maxSize) {
+      showToast("ファイルサイズが大きすぎます（最大" + (isVideo ? "20" : "5") + "MB）");
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const dataUrl = e.target.result;
+      uploadedFiles[fieldKey] = dataUrl;
+
+      const previewEl = zone.querySelector(".upload-zone-preview");
+      const contentEl = zone.querySelector(".upload-zone-content");
+      const removeBtn = zone.querySelector(".upload-zone-remove");
+
+      if (isImage) {
+        previewEl.innerHTML = '<img src="' + dataUrl + '" alt="プレビュー">';
+      } else if (isVideo) {
+        previewEl.innerHTML = '<video src="' + dataUrl + '" controls muted style="width:100%;height:100%;object-fit:cover;"></video>';
+      }
+
+      contentEl.style.display = "none";
+      previewEl.style.display = "block";
+      removeBtn.style.display = "flex";
+      zone.classList.add("has-file");
+
+      showToast(file.name + " をアップロードしました");
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function clearUpload(zone, fieldKey) {
+    const previewEl = zone.querySelector(".upload-zone-preview");
+    const contentEl = zone.querySelector(".upload-zone-content");
+    const removeBtn = zone.querySelector(".upload-zone-remove");
+
+    delete uploadedFiles[fieldKey];
+    previewEl.innerHTML = "";
+    previewEl.style.display = "none";
+    contentEl.style.display = "";
+    removeBtn.style.display = "none";
+    zone.classList.remove("has-file");
+  }
+
+  // ===== Load saved data =====
   loadSavedData();
+  updateBadges();
 
   function loadSavedData() {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (!saved) return;
+    // Load draft first, fall back to published
+    const draft = localStorage.getItem(STORAGE_KEY_DRAFT);
+    const published = localStorage.getItem(STORAGE_KEY_PUBLISHED);
+    const data = draft || published;
+    if (!data) return;
 
     try {
-      const data = JSON.parse(saved);
-
-      document.querySelectorAll("[data-field]").forEach((field) => {
-        const path = field.dataset.field;
-        const value = getNestedValue(data, path);
-        if (value !== undefined) {
-          if (field.tagName === "TEXTAREA") {
-            field.value = value;
-          } else {
-            field.value = value;
-          }
-        }
-      });
-
-      // Trigger image previews
-      document.querySelectorAll("[data-preview]").forEach((preview) => {
-        const fieldKey = preview.dataset.preview;
-        const input = document.querySelector('[data-field="' + fieldKey + '"]');
-        if (input && input.value) {
-          showImagePreview(preview, input.value);
-        }
-      });
-
-      // Trigger video previews
-      document.querySelectorAll("[data-video-preview]").forEach((preview) => {
-        const fieldKey = preview.dataset.videoPreview;
-        const input = document.querySelector('[data-field="' + fieldKey + '"]');
-        if (input && input.value) {
-          showVideoPreview(preview, input.value);
-        }
-      });
-
-      showStatus("保存データを読み込みました");
+      const parsed = JSON.parse(data);
+      applyDataToForm(parsed);
+      showStatus(draft ? "下書きデータを読み込みました" : "公開データを読み込みました");
     } catch (e) {
-      // Ignore parse errors
+      // Ignore
     }
   }
 
-  // ===== Save =====
-  const btnSave = document.getElementById("btn-save");
+  function applyDataToForm(data) {
+    // Text fields
+    document.querySelectorAll("[data-field]").forEach((field) => {
+      const path = field.dataset.field;
+      const value = getNestedValue(data, path);
+      if (value !== undefined) {
+        field.value = value;
+      }
+    });
 
-  btnSave.addEventListener("click", saveData);
-
-  // Ctrl+S / Cmd+S shortcut
-  document.addEventListener("keydown", (e) => {
-    if ((e.ctrlKey || e.metaKey) && e.key === "s") {
-      e.preventDefault();
-      saveData();
+    // Uploaded images/videos
+    if (data.images) {
+      Object.keys(data.images).forEach((key) => {
+        const url = data.images[key];
+        if (url) {
+          uploadedFiles["images." + key] = url;
+          const zone = document.querySelector('[data-upload="images.' + key + '"]');
+          if (zone) {
+            showUploadPreview(zone, url, "images." + key);
+          }
+        }
+      });
     }
-  });
 
-  function saveData() {
+    if (data.heroVideo) {
+      uploadedFiles["heroVideo"] = data.heroVideo;
+      const zone = document.querySelector('[data-upload="heroVideo"]');
+      if (zone && data.heroVideo.startsWith("data:")) {
+        showUploadPreview(zone, data.heroVideo, "heroVideo");
+      }
+    }
+
+    // Video preview for URL-based videos
+    document.querySelectorAll("[data-video-preview]").forEach((preview) => {
+      const fieldKey = preview.dataset.videoPreview;
+      const input = document.querySelector('[data-field="' + fieldKey + '"]');
+      if (input && input.value && !input.value.startsWith("data:")) {
+        showVideoPreview(preview, input.value);
+      }
+    });
+  }
+
+  function showUploadPreview(zone, url, fieldKey) {
+    const previewEl = zone.querySelector(".upload-zone-preview");
+    const contentEl = zone.querySelector(".upload-zone-content");
+    const removeBtn = zone.querySelector(".upload-zone-remove");
+
+    if (url.startsWith("data:video") || (url.endsWith(".mp4") || url.endsWith(".webm"))) {
+      previewEl.innerHTML = '<video src="' + url + '" controls muted style="width:100%;height:100%;object-fit:cover;"></video>';
+    } else {
+      previewEl.innerHTML = '<img src="' + url + '" alt="プレビュー">';
+    }
+
+    contentEl.style.display = "none";
+    previewEl.style.display = "block";
+    removeBtn.style.display = "flex";
+    zone.classList.add("has-file");
+  }
+
+  // ===== Collect form data =====
+  function collectFormData() {
     const data = { texts: {}, images: {}, videos: {}, stats: {} };
 
+    // Text/URL fields
     document.querySelectorAll("[data-field]").forEach((field) => {
       const path = field.dataset.field;
       const value = field.value;
       setNestedValue(data, path, value);
     });
 
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-    showToast("保存しました");
-    showStatus("最終保存: " + new Date().toLocaleTimeString("ja-JP"));
+    // Uploaded files (override URL values)
+    Object.keys(uploadedFiles).forEach((key) => {
+      setNestedValue(data, key, uploadedFiles[key]);
+    });
+
+    return data;
   }
 
-  // ===== Preview =====
+  // ===== Draft (一時保存) =====
+  const btnDraft = document.getElementById("btn-draft");
+  btnDraft.addEventListener("click", saveDraft);
+
+  document.addEventListener("keydown", (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key === "s") {
+      e.preventDefault();
+      saveDraft();
+    }
+  });
+
+  function saveDraft() {
+    const data = collectFormData();
+    try {
+      localStorage.setItem(STORAGE_KEY_DRAFT, JSON.stringify(data));
+      showToast("一時保存しました");
+      showStatus("一時保存: " + new Date().toLocaleTimeString("ja-JP"));
+      updateBadges();
+    } catch (e) {
+      if (e.name === "QuotaExceededError") {
+        showToast("保存容量を超えました。画像サイズを小さくしてください。");
+      } else {
+        showToast("保存に失敗しました");
+      }
+    }
+  }
+
+  // ===== Preview (プレビュー) =====
   const btnPreview = document.getElementById("btn-preview");
   btnPreview.addEventListener("click", () => {
-    saveData();
-    window.open("index.html", "_blank");
+    const data = collectFormData();
+    // Save as temporary preview data
+    try {
+      localStorage.setItem(STORAGE_KEY_DRAFT, JSON.stringify(data));
+      // Open preview with draft flag
+      window.open("index.html?preview=draft", "_blank");
+      showToast("プレビューを開きました");
+    } catch (e) {
+      if (e.name === "QuotaExceededError") {
+        showToast("保存容量を超えました。画像サイズを小さくしてください。");
+      }
+    }
   });
+
+  // ===== Publish (本公開) =====
+  const btnPublish = document.getElementById("btn-publish");
+  const publishModal = document.getElementById("publish-modal");
+  const publishCancel = document.getElementById("publish-cancel");
+  const publishConfirm = document.getElementById("publish-confirm");
+
+  btnPublish.addEventListener("click", () => {
+    publishModal.style.display = "flex";
+  });
+
+  publishCancel.addEventListener("click", () => {
+    publishModal.style.display = "none";
+  });
+
+  publishModal.addEventListener("click", (e) => {
+    if (e.target === publishModal) publishModal.style.display = "none";
+  });
+
+  publishConfirm.addEventListener("click", () => {
+    const data = collectFormData();
+    try {
+      localStorage.setItem(STORAGE_KEY_PUBLISHED, JSON.stringify(data));
+      // Clear draft after publishing
+      localStorage.removeItem(STORAGE_KEY_DRAFT);
+      publishModal.style.display = "none";
+      showToast("公開しました！");
+      showStatus("公開完了: " + new Date().toLocaleTimeString("ja-JP"));
+      updateBadges();
+    } catch (e) {
+      if (e.name === "QuotaExceededError") {
+        showToast("保存容量を超えました。画像サイズを小さくしてください。");
+      }
+    }
+  });
+
+  // ===== Badges =====
+  function updateBadges() {
+    const badgeDraft = document.getElementById("badge-draft");
+    const badgePublished = document.getElementById("badge-published");
+    const hasDraft = !!localStorage.getItem(STORAGE_KEY_DRAFT);
+    const hasPublished = !!localStorage.getItem(STORAGE_KEY_PUBLISHED);
+
+    badgeDraft.style.display = hasDraft ? "inline-block" : "none";
+    badgePublished.style.display = hasPublished ? "inline-block" : "none";
+  }
 
   // ===== Export =====
   const btnExport = document.getElementById("btn-export");
   btnExport.addEventListener("click", () => {
-    const data = localStorage.getItem(STORAGE_KEY);
+    const data = localStorage.getItem(STORAGE_KEY_PUBLISHED) || localStorage.getItem(STORAGE_KEY_DRAFT);
     if (!data) {
-      showToast("保存データがありません。先に保存してください。");
+      showToast("保存データがありません。");
       return;
     }
 
@@ -164,9 +374,10 @@ document.addEventListener("DOMContentLoaded", () => {
     reader.onload = (ev) => {
       try {
         const data = JSON.parse(ev.target.result);
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-        loadSavedData();
-        showToast("インポートしました");
+        localStorage.setItem(STORAGE_KEY_DRAFT, JSON.stringify(data));
+        applyDataToForm(data);
+        showToast("インポートしました（下書きとして保存）");
+        updateBadges();
       } catch (err) {
         showToast("JSONの読み込みに失敗しました");
       }
@@ -175,38 +386,7 @@ document.addEventListener("DOMContentLoaded", () => {
     btnImport.value = "";
   });
 
-  // ===== Real-time image preview =====
-  document.querySelectorAll("[data-preview]").forEach((preview) => {
-    const fieldKey = preview.dataset.preview;
-    const input = document.querySelector('[data-field="' + fieldKey + '"]');
-    if (!input) return;
-
-    input.addEventListener("input", () => {
-      showImagePreview(preview, input.value);
-    });
-  });
-
-  function showImagePreview(container, url) {
-    if (!url) {
-      container.classList.remove("has-image");
-      container.innerHTML = "";
-      return;
-    }
-
-    const img = new Image();
-    img.onload = () => {
-      container.innerHTML = "";
-      container.appendChild(img);
-      container.classList.add("has-image");
-    };
-    img.onerror = () => {
-      container.classList.remove("has-image");
-      container.innerHTML = "";
-    };
-    img.src = url;
-  }
-
-  // ===== Real-time video preview =====
+  // ===== Video URL preview =====
   document.querySelectorAll("[data-video-preview]").forEach((preview) => {
     const fieldKey = preview.dataset.videoPreview;
     const input = document.querySelector('[data-field="' + fieldKey + '"]');
@@ -222,14 +402,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function showVideoPreview(container, url) {
-    if (!url) {
+    if (!url || url.startsWith("data:")) {
       container.classList.remove("has-video");
       container.innerHTML = "";
       return;
     }
 
     let embedUrl = "";
-
     const ytMatch = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([\w-]+)/);
     if (ytMatch) embedUrl = "https://www.youtube.com/embed/" + ytMatch[1];
 
@@ -259,7 +438,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (status) status.textContent = text;
   }
 
-  // ===== Utility functions =====
+  // ===== Utility =====
   function getNestedValue(obj, path) {
     return path.split(".").reduce((o, key) => (o && o[key] !== undefined ? o[key] : undefined), obj);
   }

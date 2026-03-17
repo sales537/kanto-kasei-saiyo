@@ -56,14 +56,19 @@
         </a>
       </nav>
       <div class="sidebar-actions">
-        <button class="sidebar-btn sidebar-btn--save" id="btn-save" title="変更を保存">
+        <button class="sidebar-btn sidebar-btn--draft" id="btn-draft" title="一時保存">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
-          保存
+          一時保存
         </button>
-        <button class="sidebar-btn" id="btn-preview" title="プレビュー">
+        <button class="sidebar-btn sidebar-btn--preview" id="btn-preview" title="プレビュー">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
           プレビュー
         </button>
+        <button class="sidebar-btn sidebar-btn--publish" id="btn-publish" title="本公開">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          本公開
+        </button>
+        <hr class="sidebar-divider">
         <button class="sidebar-btn" id="btn-export" title="JSONエクスポート">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           エクスポート
@@ -83,6 +88,10 @@
           <span></span><span></span><span></span>
         </button>
         <h2 class="topbar-title" id="topbar-title">ヒーロー</h2>
+        <div class="topbar-badges">
+          <span class="badge badge--draft" id="badge-draft" style="display:none;">下書きあり</span>
+          <span class="badge badge--published" id="badge-published" style="display:none;">公開中</span>
+        </div>
         <div class="topbar-status" id="topbar-status"></div>
       </div>
 
@@ -92,15 +101,28 @@
           <div class="admin-card">
             <h3 class="admin-card-title">メインビジュアル</h3>
             <div class="field">
-              <label>背景画像URL</label>
-              <div class="field-img-input">
-                <input type="url" data-field="images.hero_image" placeholder="https://example.com/hero.jpg">
-                <div class="field-img-preview" data-preview="images.hero_image"></div>
+              <label>背景画像</label>
+              <div class="upload-zone" data-upload="images.hero_image" data-accept="image/*">
+                <div class="upload-zone-content">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                  <p>クリックまたはドラッグ&ドロップで画像をアップロード</p>
+                  <span class="upload-zone-hint">JPG, PNG, WebP（最大5MB）</span>
+                </div>
+                <div class="upload-zone-preview"></div>
+                <button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
               </div>
             </div>
             <div class="field">
-              <label>背景動画URL（mp4ファイル ※画像の代わりに動画を使う場合）</label>
-              <input type="url" data-field="heroVideo" placeholder="https://example.com/hero.mp4">
+              <label>背景動画（mp4ファイル ※画像の代わりに動画を使う場合）</label>
+              <div class="upload-zone" data-upload="heroVideo" data-accept="video/mp4,video/webm">
+                <div class="upload-zone-content">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+                  <p>クリックまたはドラッグ&ドロップで動画をアップロード</p>
+                  <span class="upload-zone-hint">MP4, WebM（最大20MB）</span>
+                </div>
+                <div class="upload-zone-preview"></div>
+                <button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
+              </div>
             </div>
           </div>
           <div class="admin-card">
@@ -138,18 +160,26 @@
             <h3 class="admin-card-title">画像</h3>
             <div class="field-row">
               <div class="field">
-                <label>画像1 URL</label>
-                <div class="field-img-input">
-                  <input type="url" data-field="images.about_image_1" placeholder="https://example.com/photo1.jpg">
-                  <div class="field-img-preview" data-preview="images.about_image_1"></div>
+                <label>画像1</label>
+                <div class="upload-zone" data-upload="images.about_image_1" data-accept="image/*">
+                  <div class="upload-zone-content">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    <p>画像をアップロード</p>
+                  </div>
+                  <div class="upload-zone-preview"></div>
+                  <button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
                 </div>
                 <div class="field"><label>キャプション1</label><input type="text" data-field="texts.about_caption_1" value="本社工場外観"></div>
               </div>
               <div class="field">
-                <label>画像2 URL</label>
-                <div class="field-img-input">
-                  <input type="url" data-field="images.about_image_2" placeholder="https://example.com/photo2.jpg">
-                  <div class="field-img-preview" data-preview="images.about_image_2"></div>
+                <label>画像2</label>
+                <div class="upload-zone" data-upload="images.about_image_2" data-accept="image/*">
+                  <div class="upload-zone-content">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    <p>画像をアップロード</p>
+                  </div>
+                  <div class="upload-zone-preview"></div>
+                  <button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
                 </div>
                 <div class="field"><label>キャプション2</label><input type="text" data-field="texts.about_caption_2" value="製造現場の様子"></div>
               </div>
@@ -158,10 +188,21 @@
           <div class="admin-card">
             <h3 class="admin-card-title">会社紹介動画</h3>
             <div class="field">
-              <label>YouTube / Vimeo URL</label>
-              <input type="url" data-field="videos.about_video" placeholder="https://www.youtube.com/watch?v=xxxxx">
-              <span class="field-hint">YouTube・VimeoのURLを貼り付けると自動で埋め込まれます</span>
-              <div class="field-video-preview" data-video-preview="videos.about_video"></div>
+              <label>動画ファイルをアップロード、またはYouTube/Vimeo URLを入力</label>
+              <div class="upload-zone" data-upload="videos.about_video" data-accept="video/mp4,video/webm">
+                <div class="upload-zone-content">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+                  <p>動画をアップロード</p>
+                </div>
+                <div class="upload-zone-preview"></div>
+                <button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
+              </div>
+              <div class="field" style="margin-top: 0.75rem;">
+                <label>または YouTube / Vimeo URL</label>
+                <input type="url" data-field="videos.about_video" placeholder="https://www.youtube.com/watch?v=xxxxx">
+                <span class="field-hint">URLを入力すると埋め込みプレーヤーが表示されます</span>
+                <div class="field-video-preview" data-video-preview="videos.about_video"></div>
+              </div>
             </div>
           </div>
           <div class="admin-card">
@@ -221,26 +262,48 @@
             <h3 class="admin-card-title">仕事カード 1</h3>
             <div class="field"><label>タイトル</label><input type="text" data-field="texts.work_title_1" value="めっき技術"></div>
             <div class="field"><label>説明</label><textarea data-field="texts.work_desc_1" rows="3">プラめっき、３価クロムめっき、サテンめっき、スモークめっき、コンポジットめっき（機能めっき）など、多様なめっき技術で製品に付加価値を与えます。</textarea></div>
-            <div class="field"><label>画像URL</label><div class="field-img-input"><input type="url" data-field="images.work_image_1" placeholder="https://..."><div class="field-img-preview" data-preview="images.work_image_1"></div></div></div>
+            <div class="field"><label>画像</label>
+              <div class="upload-zone" data-upload="images.work_image_1" data-accept="image/*">
+                <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
+                <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
+              </div>
+            </div>
           </div>
           <div class="admin-card">
             <h3 class="admin-card-title">仕事カード 2</h3>
             <div class="field"><label>タイトル</label><input type="text" data-field="texts.work_title_2" value="塗装・蒸着"></div>
             <div class="field"><label>説明</label><textarea data-field="texts.work_desc_2" rows="3">高品質な塗装技術と蒸着技術により、製品の外観品質と機能性を高次元で両立。自動車外装部品をはじめ幅広い分野に対応しています。</textarea></div>
-            <div class="field"><label>画像URL</label><div class="field-img-input"><input type="url" data-field="images.work_image_2" placeholder="https://..."><div class="field-img-preview" data-preview="images.work_image_2"></div></div></div>
+            <div class="field"><label>画像</label>
+              <div class="upload-zone" data-upload="images.work_image_2" data-accept="image/*">
+                <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
+                <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
+              </div>
+            </div>
           </div>
           <div class="admin-card">
             <h3 class="admin-card-title">仕事カード 3</h3>
             <div class="field"><label>タイトル</label><input type="text" data-field="texts.work_title_3" value="樹脂成形"></div>
             <div class="field"><label>説明</label><textarea data-field="texts.work_desc_3" rows="3">精密な樹脂成形から表面処理、組付けまでの一貫生産体制。お客様のニーズにワンストップで応える生産力が強みです。</textarea></div>
-            <div class="field"><label>画像URL</label><div class="field-img-input"><input type="url" data-field="images.work_image_3" placeholder="https://..."><div class="field-img-preview" data-preview="images.work_image_3"></div></div></div>
+            <div class="field"><label>画像</label>
+              <div class="upload-zone" data-upload="images.work_image_3" data-accept="image/*">
+                <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
+                <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
+              </div>
+            </div>
           </div>
           <div class="admin-card">
             <h3 class="admin-card-title">仕事紹介動画</h3>
             <div class="field">
-              <label>YouTube / Vimeo URL</label>
-              <input type="url" data-field="videos.work_video" placeholder="https://www.youtube.com/watch?v=xxxxx">
-              <div class="field-video-preview" data-video-preview="videos.work_video"></div>
+              <label>動画ファイルまたはURL</label>
+              <div class="upload-zone" data-upload="videos.work_video" data-accept="video/mp4,video/webm">
+                <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg><p>動画をアップロード</p></div>
+                <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
+              </div>
+              <div class="field" style="margin-top: 0.75rem;">
+                <label>または YouTube / Vimeo URL</label>
+                <input type="url" data-field="videos.work_video" placeholder="https://www.youtube.com/watch?v=xxxxx">
+                <div class="field-video-preview" data-video-preview="videos.work_video"></div>
+              </div>
             </div>
           </div>
         </section>
@@ -273,7 +336,12 @@
           <div class="admin-card">
             <h3 class="admin-card-title">セクション設定</h3>
             <div class="field"><label>サブタイトル</label><input type="text" data-field="texts.benefits_subtitle" value="安心して長く働ける環境を整えています"></div>
-            <div class="field"><label>画像URL</label><div class="field-img-input"><input type="url" data-field="images.benefits_image" placeholder="https://..."><div class="field-img-preview" data-preview="images.benefits_image"></div></div></div>
+            <div class="field"><label>画像</label>
+              <div class="upload-zone" data-upload="images.benefits_image" data-accept="image/*">
+                <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
+                <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
+              </div>
+            </div>
           </div>
           <div class="admin-card">
             <h3 class="admin-card-title">福利厚生項目</h3>
@@ -316,19 +384,34 @@
             <h3 class="admin-card-title">活動カード 1</h3>
             <div class="field"><label>タイトル</label><input type="text" data-field="texts.activity_title_1" value="野球部"></div>
             <div class="field"><label>説明</label><textarea data-field="texts.activity_desc_1" rows="3">社内野球部が活動中。チームワークを大切にし、社員同士の交流の場となっています。</textarea></div>
-            <div class="field"><label>画像URL</label><div class="field-img-input"><input type="url" data-field="images.activity_image_1" placeholder="https://..."><div class="field-img-preview" data-preview="images.activity_image_1"></div></div></div>
+            <div class="field"><label>画像</label>
+              <div class="upload-zone" data-upload="images.activity_image_1" data-accept="image/*">
+                <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
+                <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
+              </div>
+            </div>
           </div>
           <div class="admin-card">
             <h3 class="admin-card-title">活動カード 2</h3>
             <div class="field"><label>タイトル</label><input type="text" data-field="texts.activity_title_2" value="リトルシニア支援"></div>
             <div class="field"><label>説明</label><textarea data-field="texts.activity_desc_2" rows="3">日本リトルシニア中学硬式野球協会 関東連盟所属の「横須賀三浦リトルシニア」を応援。社有マイクロバスでの送迎など、地域の子どもたちの成長を支援しています。</textarea></div>
-            <div class="field"><label>画像URL</label><div class="field-img-input"><input type="url" data-field="images.activity_image_2" placeholder="https://..."><div class="field-img-preview" data-preview="images.activity_image_2"></div></div></div>
+            <div class="field"><label>画像</label>
+              <div class="upload-zone" data-upload="images.activity_image_2" data-accept="image/*">
+                <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
+                <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
+              </div>
+            </div>
           </div>
           <div class="admin-card">
             <h3 class="admin-card-title">活動カード 3</h3>
             <div class="field"><label>タイトル</label><input type="text" data-field="texts.activity_title_3" value="地域イベント"></div>
             <div class="field"><label>説明</label><textarea data-field="texts.activity_desc_3" rows="3">国際フロンティアメッセ（みなと元気めっせ）に出展し「ベスト展示賞/特別賞」を受賞。地域社会への貢献にも積極的に取り組んでいます。</textarea></div>
-            <div class="field"><label>画像URL</label><div class="field-img-input"><input type="url" data-field="images.activity_image_3" placeholder="https://..."><div class="field-img-preview" data-preview="images.activity_image_3"></div></div></div>
+            <div class="field"><label>画像</label>
+              <div class="upload-zone" data-upload="images.activity_image_3" data-accept="image/*">
+                <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
+                <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -366,7 +449,19 @@
     </main>
   </div>
 
-  <!-- 保存成功トースト -->
+  <!-- 公開確認モーダル -->
+  <div class="modal-overlay" id="publish-modal" style="display:none;">
+    <div class="modal">
+      <h3 class="modal-title">本公開の確認</h3>
+      <p class="modal-text">現在の内容を公開ページに反映します。<br>この操作で公開ページが更新されます。よろしいですか？</p>
+      <div class="modal-actions">
+        <button class="modal-btn modal-btn--cancel" id="publish-cancel">キャンセル</button>
+        <button class="modal-btn modal-btn--confirm" id="publish-confirm">公開する</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- トースト -->
   <div class="toast" id="toast">保存しました</div>
 
   <script src="admin.js"></script>
