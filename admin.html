@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>管理画面 | 関東化成工業 採用LP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <!-- サイドバー -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h1 class="sidebar-logo">LP管理画面</h1>
+        <p class="sidebar-sub">関東化成工業 採用サイト</p>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#sec-hero" class="sidebar-link active" data-section="sec-hero">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>
+          ヒーロー
+        </a>
+        <a href="#sec-about" class="sidebar-link" data-section="sec-about">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+          私たちについて
+        </a>
+        <a href="#sec-stats" class="sidebar-link" data-section="sec-stats">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+          数字セクション
+        </a>
+        <a href="#sec-work" class="sidebar-link" data-section="sec-work">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          仕事を知る
+        </a>
+        <a href="#sec-education" class="sidebar-link" data-section="sec-education">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          教育制度
+        </a>
+        <a href="#sec-benefits" class="sidebar-link" data-section="sec-benefits">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          福利厚生
+        </a>
+        <a href="#sec-activities" class="sidebar-link" data-section="sec-activities">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          サークル・地域
+        </a>
+        <a href="#sec-requirements" class="sidebar-link" data-section="sec-requirements">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          募集要項
+        </a>
+        <a href="#sec-entry" class="sidebar-link" data-section="sec-entry">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+          エントリー
+        </a>
+      </nav>
+      <div class="sidebar-actions">
+        <button class="sidebar-btn sidebar-btn--save" id="btn-save" title="変更を保存">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+          保存
+        </button>
+        <button class="sidebar-btn" id="btn-preview" title="プレビュー">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          プレビュー
+        </button>
+        <button class="sidebar-btn" id="btn-export" title="JSONエクスポート">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          エクスポート
+        </button>
+        <label class="sidebar-btn" title="JSONインポート">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          インポート
+          <input type="file" accept=".json" id="btn-import" hidden>
+        </label>
+      </div>
+    </aside>
+
+    <!-- メインコンテンツ -->
+    <main class="admin-main">
+      <div class="admin-topbar">
+        <button class="topbar-menu" id="topbar-menu">
+          <span></span><span></span><span></span>
+        </button>
+        <h2 class="topbar-title" id="topbar-title">ヒーロー</h2>
+        <div class="topbar-status" id="topbar-status"></div>
+      </div>
+
+      <div class="admin-content" id="admin-content">
+        <!-- ===== ヒーロー ===== -->
+        <section class="admin-section" id="sec-hero">
+          <div class="admin-card">
+            <h3 class="admin-card-title">メインビジュアル</h3>
+            <div class="field">
+              <label>背景画像URL</label>
+              <div class="field-img-input">
+                <input type="url" data-field="images.hero_image" placeholder="https://example.com/hero.jpg">
+                <div class="field-img-preview" data-preview="images.hero_image"></div>
+              </div>
+            </div>
+            <div class="field">
+              <label>背景動画URL（mp4ファイル ※画像の代わりに動画を使う場合）</label>
+              <input type="url" data-field="heroVideo" placeholder="https://example.com/hero.mp4">
+            </div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">テキスト</h3>
+            <div class="field">
+              <label>メインコピー</label>
+              <textarea data-field="texts.hero_title" rows="2">技術を磨く、
+未来を創る。</textarea>
+              <span class="field-hint">改行は&lt;br&gt;として反映されます</span>
+            </div>
+            <div class="field">
+              <label>サブコピー</label>
+              <textarea data-field="texts.hero_subtitle" rows="3">世界初のプラめっき商品化から60年。
+表面処理のエキスパートとして挑戦し続ける仲間を求めています。</textarea>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== 私たちについて ===== -->
+        <section class="admin-section" id="sec-about" style="display:none;">
+          <div class="admin-card">
+            <h3 class="admin-card-title">CI・説明文</h3>
+            <div class="field">
+              <label>CI（企業理念）</label>
+              <input type="text" data-field="texts.about_ci" value="「人になれ、奉仕せよ」">
+            </div>
+            <div class="field">
+              <label>会社紹介文</label>
+              <textarea data-field="texts.about_desc" rows="6">関東化成工業は、1963年に世界で初めてプラめっきを商品化して以来、３価クロムめっき、サテンめっき、スモークめっきなどの独自技術を開発し、表面処理業界のトップランナーとして国内外から厚い信頼を得ています。
+
+「産学協同」を礎に、樹脂成形から各種表面処理加工（めっき・塗装・蒸着）、組付まで一貫生産体制を確立。自動車外装用製品をはじめ、さまざまな分野でその技術力を発揮しています。</textarea>
+            </div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">画像</h3>
+            <div class="field-row">
+              <div class="field">
+                <label>画像1 URL</label>
+                <div class="field-img-input">
+                  <input type="url" data-field="images.about_image_1" placeholder="https://example.com/photo1.jpg">
+                  <div class="field-img-preview" data-preview="images.about_image_1"></div>
+                </div>
+                <div class="field"><label>キャプション1</label><input type="text" data-field="texts.about_caption_1" value="本社工場外観"></div>
+              </div>
+              <div class="field">
+                <label>画像2 URL</label>
+                <div class="field-img-input">
+                  <input type="url" data-field="images.about_image_2" placeholder="https://example.com/photo2.jpg">
+                  <div class="field-img-preview" data-preview="images.about_image_2"></div>
+                </div>
+                <div class="field"><label>キャプション2</label><input type="text" data-field="texts.about_caption_2" value="製造現場の様子"></div>
+              </div>
+            </div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">会社紹介動画</h3>
+            <div class="field">
+              <label>YouTube / Vimeo URL</label>
+              <input type="url" data-field="videos.about_video" placeholder="https://www.youtube.com/watch?v=xxxxx">
+              <span class="field-hint">YouTube・VimeoのURLを貼り付けると自動で埋め込まれます</span>
+              <div class="field-video-preview" data-video-preview="videos.about_video"></div>
+            </div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">会社概要</h3>
+            <div class="field"><label>会社名</label><input type="text" data-field="texts.company_name" value="関東化成工業株式会社（KANTO KASEI CO., LTD.）"></div>
+            <div class="field"><label>設立</label><input type="text" data-field="texts.company_founded" value="1969年（昭和44年） ※1946年 旧制関東学院工業専門学校実習工場として創業"></div>
+            <div class="field"><label>本社所在地</label><input type="text" data-field="texts.company_address" value="〒239-0806 神奈川県横須賀市池田町4-4-1"></div>
+            <div class="field"><label>TEL</label><input type="text" data-field="texts.company_tel" value="046-835-4600"></div>
+            <div class="field"><label>資本金</label><input type="text" data-field="texts.company_capital" value="2億円"></div>
+            <div class="field"><label>従業員数</label><input type="text" data-field="texts.company_employees" value="406名"></div>
+            <div class="field"><label>事業内容</label><textarea data-field="texts.company_business" rows="2">樹脂成形、各種表面処理加工（めっき・塗装・蒸着）、組付の一貫生産</textarea></div>
+            <div class="field"><label>主要取引先</label><textarea data-field="texts.company_clients" rows="2">トヨタ自動車、トヨタ自動車東日本、トヨタ車体、日野自動車、豊田自動織機、ダイハツ工業、日産自動車、スズキ、ファナック 他</textarea></div>
+            <div class="field"><label>拠点</label><input type="text" data-field="texts.company_locations" value="本社工場（横須賀市）、岩手工場（一関市）、インドネシア合弁工場"></div>
+          </div>
+        </section>
+
+        <!-- ===== 数字セクション ===== -->
+        <section class="admin-section" id="sec-stats" style="display:none;">
+          <div class="admin-card">
+            <h3 class="admin-card-title">数字で見る関東化成</h3>
+            <div class="stat-editor">
+              <div class="stat-editor-item">
+                <h4>数字 1</h4>
+                <div class="field"><label>数値</label><input type="number" data-field="stats.stat_1_number" value="1963"></div>
+                <div class="field"><label>単位</label><input type="text" data-field="texts.stat_1_unit" value="年"></div>
+                <div class="field"><label>ラベル</label><input type="text" data-field="texts.stat_1_label" value="プラめっき商品化"></div>
+              </div>
+              <div class="stat-editor-item">
+                <h4>数字 2</h4>
+                <div class="field"><label>数値</label><input type="number" data-field="stats.stat_2_number" value="55"></div>
+                <div class="field"><label>単位</label><input type="text" data-field="texts.stat_2_unit" value="年以上"></div>
+                <div class="field"><label>ラベル</label><input type="text" data-field="texts.stat_2_label" value="業界での実績"></div>
+              </div>
+              <div class="stat-editor-item">
+                <h4>数字 3</h4>
+                <div class="field"><label>数値</label><input type="number" data-field="stats.stat_3_number" value="406"></div>
+                <div class="field"><label>単位</label><input type="text" data-field="texts.stat_3_unit" value="名"></div>
+                <div class="field"><label>ラベル</label><input type="text" data-field="texts.stat_3_label" value="従業員数"></div>
+              </div>
+              <div class="stat-editor-item">
+                <h4>数字 4</h4>
+                <div class="field"><label>数値</label><input type="number" data-field="stats.stat_4_number" value="3"></div>
+                <div class="field"><label>単位</label><input type="text" data-field="texts.stat_4_unit" value="拠点"></div>
+                <div class="field"><label>ラベル</label><input type="text" data-field="texts.stat_4_label" value="国内外の生産拠点"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== 仕事を知る ===== -->
+        <section class="admin-section" id="sec-work" style="display:none;">
+          <div class="admin-card">
+            <h3 class="admin-card-title">セクション設定</h3>
+            <div class="field"><label>サブタイトル</label><input type="text" data-field="texts.work_subtitle" value="世界をリードする表面処理技術で、あなたの可能性を広げる"></div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">仕事カード 1</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.work_title_1" value="めっき技術"></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.work_desc_1" rows="3">プラめっき、３価クロムめっき、サテンめっき、スモークめっき、コンポジットめっき（機能めっき）など、多様なめっき技術で製品に付加価値を与えます。</textarea></div>
+            <div class="field"><label>画像URL</label><div class="field-img-input"><input type="url" data-field="images.work_image_1" placeholder="https://..."><div class="field-img-preview" data-preview="images.work_image_1"></div></div></div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">仕事カード 2</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.work_title_2" value="塗装・蒸着"></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.work_desc_2" rows="3">高品質な塗装技術と蒸着技術により、製品の外観品質と機能性を高次元で両立。自動車外装部品をはじめ幅広い分野に対応しています。</textarea></div>
+            <div class="field"><label>画像URL</label><div class="field-img-input"><input type="url" data-field="images.work_image_2" placeholder="https://..."><div class="field-img-preview" data-preview="images.work_image_2"></div></div></div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">仕事カード 3</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.work_title_3" value="樹脂成形"></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.work_desc_3" rows="3">精密な樹脂成形から表面処理、組付けまでの一貫生産体制。お客様のニーズにワンストップで応える生産力が強みです。</textarea></div>
+            <div class="field"><label>画像URL</label><div class="field-img-input"><input type="url" data-field="images.work_image_3" placeholder="https://..."><div class="field-img-preview" data-preview="images.work_image_3"></div></div></div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">仕事紹介動画</h3>
+            <div class="field">
+              <label>YouTube / Vimeo URL</label>
+              <input type="url" data-field="videos.work_video" placeholder="https://www.youtube.com/watch?v=xxxxx">
+              <div class="field-video-preview" data-video-preview="videos.work_video"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== 教育制度 ===== -->
+        <section class="admin-section" id="sec-education" style="display:none;">
+          <div class="admin-card">
+            <h3 class="admin-card-title">セクション設定</h3>
+            <div class="field"><label>サブタイトル</label><input type="text" data-field="texts.education_subtitle" value="「産学協同」の精神を受け継ぎ、人材育成に力を入れています"></div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">教育カード 1</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.edu_title_1" value="表面処理技術研修"></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.edu_desc_1" rows="3">最新の表面処理技術を学ぶ研修制度を整備。毎年1〜2名が受講し、専門知識とスキルを深めています。</textarea></div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">教育カード 2</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.edu_title_2" value="文部科学省認定プログラム"></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.edu_desc_2" rows="3">「職業実践力育成プログラム」に認定された集中講義を受講可能。過去5名が修了しています。</textarea></div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">教育カード 3</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.edu_title_3" value="OJT・メンター制度"></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.edu_desc_3" rows="3">先輩社員がマンツーマンで指導するOJT制度。実務を通じて着実にスキルアップできる環境です。</textarea></div>
+          </div>
+        </section>
+
+        <!-- ===== 福利厚生 ===== -->
+        <section class="admin-section" id="sec-benefits" style="display:none;">
+          <div class="admin-card">
+            <h3 class="admin-card-title">セクション設定</h3>
+            <div class="field"><label>サブタイトル</label><input type="text" data-field="texts.benefits_subtitle" value="安心して長く働ける環境を整えています"></div>
+            <div class="field"><label>画像URL</label><div class="field-img-input"><input type="url" data-field="images.benefits_image" placeholder="https://..."><div class="field-img-preview" data-preview="images.benefits_image"></div></div></div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">福利厚生項目</h3>
+            <div class="benefit-editor">
+              <div class="benefit-editor-item">
+                <div class="field"><label>項目1 タイトル</label><input type="text" data-field="texts.benefit_title_1" value="住宅補助"></div>
+                <div class="field"><label>説明</label><input type="text" data-field="texts.benefit_desc_1" value="住宅手当の支給あり"></div>
+              </div>
+              <div class="benefit-editor-item">
+                <div class="field"><label>項目2 タイトル</label><input type="text" data-field="texts.benefit_title_2" value="退職金制度"></div>
+                <div class="field"><label>説明</label><input type="text" data-field="texts.benefit_desc_2" value="退職金制度完備"></div>
+              </div>
+              <div class="benefit-editor-item">
+                <div class="field"><label>項目3 タイトル</label><input type="text" data-field="texts.benefit_title_3" value="健康サポート"></div>
+                <div class="field"><label>説明</label><input type="text" data-field="texts.benefit_desc_3" value="各種社会保険完備・定期健康診断"></div>
+              </div>
+              <div class="benefit-editor-item">
+                <div class="field"><label>項目4 タイトル</label><input type="text" data-field="texts.benefit_title_4" value="休暇制度"></div>
+                <div class="field"><label>説明</label><input type="text" data-field="texts.benefit_desc_4" value="年次有給休暇・特別休暇"></div>
+              </div>
+              <div class="benefit-editor-item">
+                <div class="field"><label>項目5 タイトル</label><input type="text" data-field="texts.benefit_title_5" value="サークル活動"></div>
+                <div class="field"><label>説明</label><input type="text" data-field="texts.benefit_desc_5" value="野球部など社内サークル活動充実"></div>
+              </div>
+              <div class="benefit-editor-item">
+                <div class="field"><label>項目6 タイトル</label><input type="text" data-field="texts.benefit_title_6" value="福利厚生施設"></div>
+                <div class="field"><label>説明</label><input type="text" data-field="texts.benefit_desc_6" value="グループ会社によるサービス充実"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== サークル活動・地域貢献 ===== -->
+        <section class="admin-section" id="sec-activities" style="display:none;">
+          <div class="admin-card">
+            <h3 class="admin-card-title">セクション設定</h3>
+            <div class="field"><label>サブタイトル</label><input type="text" data-field="texts.activities_subtitle" value="仕事だけじゃない。仲間との絆を深める活動が充実しています。"></div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">活動カード 1</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.activity_title_1" value="野球部"></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.activity_desc_1" rows="3">社内野球部が活動中。チームワークを大切にし、社員同士の交流の場となっています。</textarea></div>
+            <div class="field"><label>画像URL</label><div class="field-img-input"><input type="url" data-field="images.activity_image_1" placeholder="https://..."><div class="field-img-preview" data-preview="images.activity_image_1"></div></div></div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">活動カード 2</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.activity_title_2" value="リトルシニア支援"></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.activity_desc_2" rows="3">日本リトルシニア中学硬式野球協会 関東連盟所属の「横須賀三浦リトルシニア」を応援。社有マイクロバスでの送迎など、地域の子どもたちの成長を支援しています。</textarea></div>
+            <div class="field"><label>画像URL</label><div class="field-img-input"><input type="url" data-field="images.activity_image_2" placeholder="https://..."><div class="field-img-preview" data-preview="images.activity_image_2"></div></div></div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">活動カード 3</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.activity_title_3" value="地域イベント"></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.activity_desc_3" rows="3">国際フロンティアメッセ（みなと元気めっせ）に出展し「ベスト展示賞/特別賞」を受賞。地域社会への貢献にも積極的に取り組んでいます。</textarea></div>
+            <div class="field"><label>画像URL</label><div class="field-img-input"><input type="url" data-field="images.activity_image_3" placeholder="https://..."><div class="field-img-preview" data-preview="images.activity_image_3"></div></div></div>
+          </div>
+        </section>
+
+        <!-- ===== 募集要項 ===== -->
+        <section class="admin-section" id="sec-requirements" style="display:none;">
+          <div class="admin-card">
+            <h3 class="admin-card-title">募集要項</h3>
+            <div class="field"><label>採用区分</label><input type="text" data-field="texts.req_type" value="新卒採用（2027年卒）"></div>
+            <div class="field"><label>募集職種</label><textarea data-field="texts.req_positions" rows="2">技術職（生産技術・品質管理・研究開発）、事務職（総務・経理・営業）</textarea></div>
+            <div class="field"><label>応募資格</label><textarea data-field="texts.req_qualifications" rows="2">2027年3月に大学・大学院・短大・専門学校・高等専門学校を卒業見込みの方</textarea></div>
+            <div class="field"><label>勤務地</label><input type="text" data-field="texts.req_location" value="本社工場（神奈川県横須賀市）、岩手工場（岩手県一関市）"></div>
+            <div class="field"><label>採用予定人数</label><input type="text" data-field="texts.req_count" value="6〜10名"></div>
+            <div class="field"><label>選考フロー</label><input type="text" data-field="texts.req_flow" value="マイナビよりエントリー → 会社説明会 → 書類選考 → 面接（複数回） → 内定"></div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">イベント</h3>
+            <div class="field"><label>イベント1 タイトル</label><input type="text" data-field="texts.event_title_1" value="1DAY職場体験"></div>
+            <div class="field"><label>イベント1 説明</label><textarea data-field="texts.event_desc_1" rows="2">実際の製造現場を体験できるプログラムです。表面処理技術の世界を肌で感じてみませんか？</textarea></div>
+            <div class="field"><label>イベント2 タイトル</label><input type="text" data-field="texts.event_title_2" value="Webセミナー"></div>
+            <div class="field"><label>イベント2 説明</label><textarea data-field="texts.event_desc_2" rows="2">オンラインで参加可能な会社説明会。関東化成工業の魅力を詳しくご紹介します。</textarea></div>
+          </div>
+        </section>
+
+        <!-- ===== エントリー ===== -->
+        <section class="admin-section" id="sec-entry" style="display:none;">
+          <div class="admin-card">
+            <h3 class="admin-card-title">エントリーセクション</h3>
+            <div class="field"><label>説明文</label><textarea data-field="texts.entry_desc" rows="2">関東化成工業に興味を持ってくださった方、まずはお気軽にエントリーください。</textarea></div>
+            <div class="field"><label>エントリーリンクURL</label><input type="url" data-field="entryLink" value="https://job.mynavi.jp/26/pc/search/corp50547/outline.html"></div>
+            <div class="field"><label>担当部署</label><input type="text" data-field="texts.entry_department" value="関東化成工業株式会社 経営管理本部 総務部 総務人事課"></div>
+            <div class="field"><label>電話番号</label><input type="text" data-field="texts.entry_tel" value="046-835-4600"></div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- 保存成功トースト -->
+  <div class="toast" id="toast">保存しました</div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
