@@ -27,32 +27,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ===== Header scroll effect with hide/show =====
   const header = document.getElementById("header");
+  const isSubPage = header && header.classList.contains("header--sub");
   let lastScrollY = 0;
   let ticking = false;
 
-  window.addEventListener("scroll", () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        const currentScrollY = window.scrollY;
-        header.classList.toggle("scrolled", currentScrollY > 50);
+  if (header) {
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          if (!isSubPage) {
+            header.classList.toggle("scrolled", currentScrollY > 50);
+          }
 
-        // Hide header on scroll down, show on scroll up
-        if (currentScrollY > 300 && currentScrollY > lastScrollY) {
-          header.classList.add("header-hidden");
-        } else {
-          header.classList.remove("header-hidden");
-        }
+          // Hide header on scroll down, show on scroll up
+          if (currentScrollY > 300 && currentScrollY > lastScrollY) {
+            header.classList.add("header-hidden");
+          } else {
+            header.classList.remove("header-hidden");
+          }
 
-        lastScrollY = currentScrollY;
-        ticking = false;
-      });
-      ticking = true;
-    }
-  });
+          lastScrollY = currentScrollY;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  }
 
   // ===== Mobile menu toggle =====
   const menuToggle = document.getElementById("menu-toggle");
   const nav = document.querySelector(".nav");
+
+  if (!menuToggle || !nav) return;
 
   menuToggle.addEventListener("click", () => {
     const isOpen = nav.classList.toggle("active");
@@ -324,6 +331,33 @@ function createParticles() {
 
 // Run particle creation
 createParticles();
+
+// ===== Work Nav Active State =====
+function initWorkNav() {
+  const workNavLinks = document.querySelectorAll(".work-nav-link");
+  if (workNavLinks.length === 0) return;
+
+  const workSections = document.querySelectorAll(".work-detail-section");
+  const workNavObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          workNavLinks.forEach((link) => {
+            link.classList.toggle(
+              "active",
+              link.getAttribute("href") === "#" + entry.target.id
+            );
+          });
+        }
+      });
+    },
+    { threshold: 0.2, rootMargin: "-100px 0px -50% 0px" }
+  );
+
+  workSections.forEach((section) => workNavObserver.observe(section));
+}
+
+initWorkNav();
 
 // ===== Content Management System =====
 function loadContent() {
