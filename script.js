@@ -41,10 +41,13 @@ document.addEventListener("DOMContentLoaded", () => {
           }
 
           // Hide header on scroll down, show on scroll up
+          const workNavBar = document.querySelector(".work-nav-bar");
           if (currentScrollY > 300 && currentScrollY > lastScrollY) {
             header.classList.add("header-hidden");
+            if (workNavBar) workNavBar.classList.add("nav-hidden");
           } else {
             header.classList.remove("header-hidden");
+            if (workNavBar) workNavBar.classList.remove("nav-hidden");
           }
 
           lastScrollY = currentScrollY;

@@ -1815,6 +1815,11 @@ h1, h2, h3, h4 {
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   box-shadow: 0 2px 8px rgba(13, 40, 71, 0.04);
+  transition: transform 0.4s ease;
+}
+
+.work-nav-bar.nav-hidden {
+  transform: translateY(calc(-100% - var(--header-h)));
 }
 
 .work-nav-list {
