@@ -260,11 +260,11 @@
         <!-- ===== 仕事を知る ===== -->
         <section class="admin-section" id="sec-work" style="display:none;">
           <div class="admin-card">
-            <h3 class="admin-card-title">セクション設定</h3>
+            <h3 class="admin-card-title">セクション設定（トップページ & 詳細ページ共通）</h3>
             <div class="field"><label>サブタイトル</label><input type="text" data-field="texts.work_subtitle" value="世界をリードする表面処理技術で、あなたの可能性を広げる"></div>
           </div>
           <div class="admin-card">
-            <h3 class="admin-card-title">仕事カード 1</h3>
+            <h3 class="admin-card-title">仕事カード 1（トップページ）</h3>
             <div class="field"><label>タイトル</label><input type="text" data-field="texts.work_title_1" value="めっき技術"></div>
             <div class="field"><label>説明</label><textarea data-field="texts.work_desc_1" rows="3">プラめっき、３価クロムめっき、サテンめっき、スモークめっき、コンポジットめっき（機能めっき）など、多様なめっき技術で製品に付加価値を与えます。</textarea></div>
             <div class="field"><label>画像</label>
@@ -275,7 +275,7 @@
             </div>
           </div>
           <div class="admin-card">
-            <h3 class="admin-card-title">仕事カード 2</h3>
+            <h3 class="admin-card-title">仕事カード 2（トップページ）</h3>
             <div class="field"><label>タイトル</label><input type="text" data-field="texts.work_title_2" value="塗装・蒸着"></div>
             <div class="field"><label>説明</label><textarea data-field="texts.work_desc_2" rows="3">高品質な塗装技術と蒸着技術により、製品の外観品質と機能性を高次元で両立。自動車外装部品をはじめ幅広い分野に対応しています。</textarea></div>
             <div class="field"><label>画像</label>
@@ -286,7 +286,7 @@
             </div>
           </div>
           <div class="admin-card">
-            <h3 class="admin-card-title">仕事カード 3</h3>
+            <h3 class="admin-card-title">仕事カード 3（トップページ）</h3>
             <div class="field"><label>タイトル</label><input type="text" data-field="texts.work_title_3" value="樹脂成形"></div>
             <div class="field"><label>説明</label><textarea data-field="texts.work_desc_3" rows="3">精密な樹脂成形から表面処理、組付けまでの一貫生産体制。お客様のニーズにワンストップで応える生産力が強みです。</textarea></div>
             <div class="field"><label>画像</label>
@@ -310,6 +310,61 @@
                 <div class="field-video-preview" data-video-preview="videos.work_video"></div>
               </div>
             </div>
+          </div>
+
+          <!-- 詳細ページ: ヒーロー -->
+          <div class="admin-card admin-card--sub">
+            <h3 class="admin-card-title">📄 詳細ページ設定</h3>
+            <p class="admin-card-desc">仕事を知る詳細ページ（work.html）で表示されるコンテンツです。</p>
+            <div class="field"><label>ヒーロー画像</label>
+              <div class="upload-zone" data-upload="images.work_hero_image" data-accept="image/*">
+                <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
+                <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
+              </div>
+            </div>
+            <div class="field"><label>詳細ページサブタイトル</label><input type="text" data-field="texts.work_detail_subtitle" value="世界をリードする表面処理技術で、あなたの可能性を広げる"></div>
+          </div>
+
+          <!-- 詳細ページ: めっき技術 -->
+          <div class="admin-card admin-card--sub">
+            <h3 class="admin-card-title">01 めっき技術（詳細ページ）</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.work_detail_title_1" value="めっき技術"></div>
+            <div class="field"><label>メイン画像</label>
+              <div class="upload-zone" data-upload="images.work_detail_image_1" data-accept="image/*">
+                <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
+                <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
+              </div>
+            </div>
+            <div class="field"><label>仕事内容（段落1）</label><textarea data-field="texts.work_detail_desc_1" rows="4">プラスチック製品への装飾めっきを中心に、自動車外装部品の高品質な表面処理を行います。プラめっき、3価クロムめっき、サテンめっき、スモークめっき、コンポジットめっき（機能めっき）など多彩な技術を駆使し、製品に美しさと機能性を付与します。</textarea></div>
+            <div class="field"><label>仕事内容（段落2）</label><textarea data-field="texts.work_detail_desc_1b" rows="4">薬品の調合・管理、めっきラインの運転・監視、品質検査、工程改善まで幅広い業務に携わります。最新の分析機器を使用した品質管理や、新技術の開発にも挑戦できる環境です。</textarea></div>
+          </div>
+
+          <!-- 詳細ページ: 塗装・蒸着 -->
+          <div class="admin-card admin-card--sub">
+            <h3 class="admin-card-title">02 塗装・蒸着（詳細ページ）</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.work_detail_title_2" value="塗装・蒸着"></div>
+            <div class="field"><label>メイン画像</label>
+              <div class="upload-zone" data-upload="images.work_detail_image_2" data-accept="image/*">
+                <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
+                <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
+              </div>
+            </div>
+            <div class="field"><label>仕事内容（段落1）</label><textarea data-field="texts.work_detail_desc_2" rows="4">自動車外装部品を中心に、高品質な塗装技術と真空蒸着技術を用いた表面処理を行います。スプレー塗装、静電塗装、UV塗装など複数の塗装方式に対応し、製品の外観品質と耐久性を高次元で両立させます。</textarea></div>
+            <div class="field"><label>仕事内容（段落2）</label><textarea data-field="texts.work_detail_desc_2b" rows="4">塗料の調色・配合、塗装ロボットの操作・調整、膜厚管理、色差検査など、科学と技能を融合させた業務です。真空蒸着では金属薄膜をナノレベルで制御し、メタリックな光沢を実現します。</textarea></div>
+          </div>
+
+          <!-- 詳細ページ: 樹脂成形 -->
+          <div class="admin-card admin-card--sub">
+            <h3 class="admin-card-title">03 樹脂成形（詳細ページ）</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.work_detail_title_3" value="樹脂成形"></div>
+            <div class="field"><label>メイン画像</label>
+              <div class="upload-zone" data-upload="images.work_detail_image_3" data-accept="image/*">
+                <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
+                <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
+              </div>
+            </div>
+            <div class="field"><label>仕事内容（段落1）</label><textarea data-field="texts.work_detail_desc_3" rows="4">射出成形機を使用したプラスチック部品の成形を担当します。金型の段取り替え、成形条件の設定・最適化、製品の品質検査まで一連の工程を管理します。</textarea></div>
+            <div class="field"><label>仕事内容（段落2）</label><textarea data-field="texts.work_detail_desc_3b" rows="4">原料の選定・管理から金型メンテナンス、生産計画の立案まで幅広い業務に関わります。IoTを活用した生産管理システムの導入にも積極的に取り組んでいます。</textarea></div>
           </div>
         </section>
 
