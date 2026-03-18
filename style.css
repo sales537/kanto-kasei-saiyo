@@ -2159,6 +2159,442 @@ h1, h2, h3, h4 {
   }
 }
 
+/* ===== Sub Page Shared Components ===== */
+.sub-page-intro {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sub-page-intro p {
+  font-size: 1.05rem;
+  line-height: 2;
+  color: var(--text);
+}
+
+/* Sub Page Card */
+.sub-page-card {
+  margin-bottom: 2rem;
+  padding: 2.5rem;
+  background: var(--bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.4s ease;
+}
+
+.sub-page-card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.section--alt .sub-page-card {
+  background: #fff;
+}
+
+.sub-page-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.sub-page-card-number {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: rgba(13, 40, 71, 0.08);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.sub-page-card-header h3 {
+  font-size: 1.25rem;
+  color: var(--navy);
+}
+
+.sub-page-card-period {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-top: 0.25rem;
+}
+
+.sub-page-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, rgba(0, 120, 212, 0.08), rgba(0, 120, 212, 0.15));
+  color: var(--blue);
+  flex-shrink: 0;
+}
+
+.sub-page-card--compact .sub-page-card-header {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+
+.sub-page-card-body p {
+  font-size: 0.95rem;
+  line-height: 2;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.sub-page-card-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Feature List */
+.sub-page-feature-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.sub-page-feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text);
+  padding: 0.5rem 0.75rem;
+  background: var(--bg-alt);
+  border-radius: var(--radius);
+}
+
+.sub-page-feature-list li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+/* ===== Career Path (Education Page) ===== */
+.career-path-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.career-path-card {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: var(--bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.career-path-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.career-path-year {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--blue);
+  background: rgba(0, 120, 212, 0.08);
+  padding: 0.25rem 1rem;
+  border-radius: 2rem;
+  margin-bottom: 1rem;
+}
+
+.career-path-card h3 {
+  font-size: 1.1rem;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+}
+
+.career-path-card p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+/* ===== Benefits Stats (Benefits Page) ===== */
+.benefits-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.benefits-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.benefits-stat-card {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  background: var(--bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.benefits-stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.benefits-stat-number {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.benefits-stat-unit {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-light);
+}
+
+.benefits-stat-label {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+/* ===== Activity Detail Card (Activities Page) ===== */
+.activity-detail-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 4rem;
+  padding: 2.5rem;
+  background: var(--bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.4s ease;
+}
+
+.activity-detail-card:last-child {
+  margin-bottom: 0;
+}
+
+.activity-detail-card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.section--alt .activity-detail-card {
+  background: #fff;
+}
+
+.activity-detail-card--reverse {
+  direction: rtl;
+}
+
+.activity-detail-card--reverse > * {
+  direction: ltr;
+}
+
+.activity-detail-img {
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.activity-detail-img img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.activity-detail-card:hover .activity-detail-img img {
+  transform: scale(1.05);
+}
+
+.activity-detail-body h3 {
+  font-size: 1.35rem;
+  color: var(--navy);
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.activity-detail-body h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.2em;
+  width: 4px;
+  height: 1em;
+  background: var(--gold);
+  border-radius: 2px;
+}
+
+.activity-detail-body p {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 2;
+  margin-bottom: 1.25rem;
+}
+
+.activity-detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.activity-detail-info-item {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--bg-alt);
+  border-radius: var(--radius);
+}
+
+.activity-detail-info-item strong {
+  color: var(--navy);
+  flex-shrink: 0;
+  min-width: 5em;
+}
+
+.activity-detail-info-item span {
+  color: var(--text-light);
+}
+
+/* ===== Selection Flow (Requirements Page) ===== */
+.selection-flow {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 3rem;
+}
+
+.selection-flow::before {
+  content: "";
+  position: absolute;
+  left: 1.25rem;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--blue), var(--gold));
+  border-radius: 2px;
+}
+
+.selection-flow-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding-bottom: 2.5rem;
+  position: relative;
+}
+
+.selection-flow-step:last-child {
+  padding-bottom: 0;
+}
+
+.selection-flow-number {
+  position: absolute;
+  left: -3rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(0, 120, 212, 0.3);
+  transform: translateX(-0.5rem);
+}
+
+.selection-flow-step:last-child .selection-flow-number {
+  background: var(--gold);
+  box-shadow: 0 2px 8px rgba(200, 168, 78, 0.3);
+}
+
+.selection-flow-content {
+  padding: 1.5rem;
+  background: var(--bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  flex: 1;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.selection-flow-content:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateX(4px);
+}
+
+.selection-flow-content h3 {
+  font-size: 1.05rem;
+  color: var(--navy);
+  margin-bottom: 0.25rem;
+}
+
+.selection-flow-content p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+/* ===== Sub Page Responsive ===== */
+@media (max-width: 768px) {
+  .sub-page-card {
+    padding: 1.5rem;
+  }
+
+  .sub-page-feature-list {
+    grid-template-columns: 1fr;
+  }
+
+  .career-path-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .benefits-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefits-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .activity-detail-card {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .activity-detail-card--reverse {
+    direction: ltr;
+  }
+
+  .activity-detail-img img {
+    height: 220px;
+  }
+
+  .selection-flow {
+    padding-left: 2.5rem;
+  }
+
+  .selection-flow-number {
+    left: -2.5rem;
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.85rem;
+  }
+}
+
 /* ===== Reduced Motion ===== */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
