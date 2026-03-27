@@ -3,12 +3,7 @@
   "outputDirectory": ".",
   "framework": null,
   "rewrites": [
-    { "source": "/admin", "destination": "/admin.html" },
-    { "source": "/work", "destination": "/work.html" },
-    { "source": "/education", "destination": "/education.html" },
-    { "source": "/benefits", "destination": "/benefits.html" },
-    { "source": "/activities", "destination": "/activities.html" },
-    { "source": "/requirements", "destination": "/requirements.html" }
+    { "source": "/admin", "destination": "/admin.html" }
   ],
   "headers": [
     {

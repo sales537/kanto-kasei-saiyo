@@ -7,24 +7,15 @@
   <title>採用情報 | 関東化成工業株式会社</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="loading">
-  <!-- ローディング画面 -->
-  <div class="loading-screen">
-    <div class="loading-logo">KANTO KASEI</div>
-    <div class="loading-bar"><div class="loading-bar-inner"></div></div>
-  </div>
-
-  <!-- スクロールプログレスバー -->
-  <div class="scroll-progress"></div>
-
+<body>
   <a href="#main" class="skip-link">メインコンテンツへスキップ</a>
 
   <!-- ヘッダー -->
   <header class="header" id="header">
-    <div class="container header-inner">
+    <div class="header-inner">
       <a href="#" class="logo">
         <img src="" alt="" class="logo-img" id="logo-img" style="display:none;">
         <div class="logo-text-wrap" id="logo-text-wrap">
@@ -40,11 +31,10 @@
       <nav id="nav-menu" class="nav">
         <ul class="nav-list">
           <li><a href="#about" class="nav-link">私たちについて</a></li>
-          <li><a href="work.html" class="nav-link">仕事を知る</a></li>
-          <li><a href="education.html" class="nav-link">教育制度</a></li>
-          <li><a href="benefits.html" class="nav-link">福利厚生</a></li>
-          <li><a href="activities.html" class="nav-link">活動紹介</a></li>
-          <li><a href="requirements.html" class="nav-link">募集要項</a></li>
+          <li><a href="#work" class="nav-link">仕事を知る</a></li>
+          <li><a href="#education" class="nav-link">教育制度</a></li>
+          <li><a href="#benefits" class="nav-link">福利厚生</a></li>
+          <li><a href="#requirements" class="nav-link">募集要項</a></li>
           <li><a href="#entry" class="nav-link nav-link--cta">エントリー</a></li>
         </ul>
       </nav>
@@ -53,20 +43,19 @@
 
   <main id="main">
     <!-- ヒーロー -->
-    <section class="hero" id="hero" aria-labelledby="hero-heading">
-      <div class="hero-overlay"></div>
-      <div class="hero-media">
-        <img src="https://placehold.co/1920x1080/0d2847/ffffff?text=HERO+IMAGE" alt="" class="hero-bg-img" id="hero-bg-img" data-content-img="hero_image" data-visibility="hero_image">
+    <section class="hero" id="hero">
+      <div class="hero-bg">
+        <img src="https://placehold.co/1920x900/0d2847/ffffff?text=HERO+IMAGE" alt="" class="hero-bg-img" id="hero-bg-img" data-content-img="hero_image" data-visibility="hero_image">
         <video autoplay muted loop playsinline class="hero-bg-video" id="hero-bg-video" style="display:none;" data-visibility="hero_video"></video>
       </div>
-      <div class="hero-particles"></div>
-      <div class="container hero-content">
-        <p class="hero-catch" data-animate>RECRUIT</p>
-        <h1 id="hero-heading" class="hero-title" data-animate data-content="hero_title">技術を磨く、<br>未来を創る。</h1>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-label" data-animate>RECRUIT</p>
+        <h1 class="hero-title" data-animate data-content="hero_title">技術を磨く、<br>未来を創る。</h1>
         <p class="hero-subtitle" data-animate data-content="hero_subtitle">世界初のプラめっき商品化から60年。<br>表面処理のエキスパートとして挑戦し続ける仲間を求めています。</p>
         <div class="hero-actions" data-animate>
           <a href="#entry" class="btn btn-primary">エントリーはこちら</a>
-          <a href="#about" class="btn btn-outline">会社を知る</a>
+          <a href="#about" class="btn btn-ghost">会社を知る</a>
         </div>
       </div>
       <div class="hero-scroll">
@@ -76,28 +65,24 @@
     </section>
 
     <!-- 私たちについて -->
-    <section class="section" id="about" aria-labelledby="about-heading">
+    <section class="section" id="about">
       <div class="container">
-        <div class="section-label" data-animate>ABOUT US</div>
-        <h2 id="about-heading" class="section-title" data-animate>私たちについて</h2>
-        <div class="about-intro" data-animate>
-          <blockquote class="about-ci">
-            <p data-content="about_ci">「人になれ、奉仕せよ」</p>
-            <cite>— 関東化成工業 CI</cite>
-          </blockquote>
-          <p class="about-desc" data-content="about_desc">関東化成工業は、1963年に世界で初めてプラめっきを商品化して以来、３価クロムめっき、サテンめっき、スモークめっきなどの独自技術を開発し、表面処理業界のトップランナーとして国内外から厚い信頼を得ています。
-
-「産学協同」を礎に、樹脂成形から各種表面処理加工（めっき・塗装・蒸着）、組付まで一貫生産体制を確立。自動車外装用製品をはじめ、さまざまな分野でその技術力を発揮しています。</p>
+        <div class="section-header" data-animate>
+          <span class="section-label">ABOUT US</span>
+          <h2 class="section-title">私たちについて</h2>
         </div>
 
-        <div class="about-media-row" data-animate="fade-up">
-          <div class="media-slot" data-visibility="about_image_1">
-            <img src="https://placehold.co/600x400/0d2847/ffffff?text=工場外観" alt="関東化成工業 工場外観" data-content-img="about_image_1">
-            <p class="media-caption" data-content="about_caption_1">本社工場外観</p>
+        <div class="about-grid" data-animate>
+          <div class="about-text">
+            <blockquote class="about-ci">
+              <p data-content="about_ci">「人になれ、奉仕せよ」</p>
+            </blockquote>
+            <p class="about-desc" data-content="about_desc">関東化成工業は、1963年に世界で初めてプラめっきを商品化して以来、３価クロムめっき、サテンめっき、スモークめっきなどの独自技術を開発し、表面処理業界のトップランナーとして国内外から厚い信頼を得ています。
+
+「産学協同」を礎に、樹脂成形から各種表面処理加工（めっき・塗装・蒸着）、組付まで一貫生産体制を確立。自動車外装用製品をはじめ、さまざまな分野でその技術力を発揮しています。</p>
           </div>
-          <div class="media-slot" data-visibility="about_image_2">
-            <img src="https://placehold.co/600x400/0d2847/ffffff?text=製造現場" alt="関東化成工業 製造現場" data-content-img="about_image_2">
-            <p class="media-caption" data-content="about_caption_2">製造現場の様子</p>
+          <div class="about-media" data-visibility="about_image_1">
+            <img src="https://placehold.co/600x400/0d2847/ffffff?text=工場外観" alt="関東化成工業 工場外観" data-content-img="about_image_1">
           </div>
         </div>
 
@@ -112,8 +97,33 @@
           </div>
         </div>
 
-        <div class="about-table" data-animate>
-          <h3 class="about-table-title">会社概要</h3>
+        <!-- 数字で見る -->
+        <div class="stats-row" data-animate>
+          <div class="stat-item">
+            <span class="stat-number" data-target="1963" data-content-attr="stat_1_number">0</span>
+            <span class="stat-unit" data-content="stat_1_unit">年</span>
+            <span class="stat-desc" data-content="stat_1_label">プラめっき商品化</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="55" data-content-attr="stat_2_number">0</span>
+            <span class="stat-unit" data-content="stat_2_unit">年以上</span>
+            <span class="stat-desc" data-content="stat_2_label">業界での実績</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="406" data-content-attr="stat_3_number">0</span>
+            <span class="stat-unit" data-content="stat_3_unit">名</span>
+            <span class="stat-desc" data-content="stat_3_label">従業員数</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="3" data-content-attr="stat_4_number">0</span>
+            <span class="stat-unit" data-content="stat_4_unit">拠点</span>
+            <span class="stat-desc" data-content="stat_4_label">国内外の生産拠点</span>
+          </div>
+        </div>
+
+        <!-- 会社概要テーブル -->
+        <div class="info-table" data-animate>
+          <h3 class="info-table-title">会社概要</h3>
           <dl class="info-list">
             <div class="info-row"><dt>会社名</dt><dd data-content="company_name">関東化成工業株式会社（KANTO KASEI CO., LTD.）</dd></div>
             <div class="info-row"><dt>設立</dt><dd data-content="company_founded">1969年（昭和44年） ※1946年 旧制関東学院工業専門学校実習工場として創業</dd></div>
@@ -129,71 +139,41 @@
       </div>
     </section>
 
-    <!-- 数字で見る関東化成 -->
-    <section class="stats" id="stats" aria-labelledby="stats-heading">
-      <div class="container">
-        <div class="section-label section-label--light" data-animate>NUMBERS</div>
-        <h2 id="stats-heading" class="section-title section-title--light" data-animate>数字で見る関東化成</h2>
-        <div class="stats-grid" data-stagger>
-          <div class="stat-card" data-animate>
-            <span class="stat-number" data-target="1963" data-content-attr="stat_1_number">0</span>
-            <span class="stat-unit" data-content="stat_1_unit">年</span>
-            <span class="stat-label" data-content="stat_1_label">プラめっき商品化</span>
-          </div>
-          <div class="stat-card" data-animate>
-            <span class="stat-number" data-target="55" data-content-attr="stat_2_number">0</span>
-            <span class="stat-unit" data-content="stat_2_unit">年以上</span>
-            <span class="stat-label" data-content="stat_2_label">業界での実績</span>
-          </div>
-          <div class="stat-card" data-animate>
-            <span class="stat-number" data-target="406" data-content-attr="stat_3_number">0</span>
-            <span class="stat-unit" data-content="stat_3_unit">名</span>
-            <span class="stat-label" data-content="stat_3_label">従業員数</span>
-          </div>
-          <div class="stat-card" data-animate>
-            <span class="stat-number" data-target="3" data-content-attr="stat_4_number">0</span>
-            <span class="stat-unit" data-content="stat_4_unit">拠点</span>
-            <span class="stat-label" data-content="stat_4_label">国内外の生産拠点</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- 仕事を知る -->
-    <section class="section section--alt" id="work" aria-labelledby="work-heading">
+    <section class="section section--accent" id="work">
       <div class="container">
-        <div class="section-label" data-animate>OUR WORK</div>
-        <h2 id="work-heading" class="section-title" data-animate>仕事を知る</h2>
-        <p class="section-subtitle" data-animate data-content="work_subtitle">世界をリードする表面処理技術で、あなたの可能性を広げる</p>
-        <div class="work-grid" data-stagger>
-          <div class="work-card" data-animate>
+        <div class="section-header" data-animate>
+          <span class="section-label">OUR WORK</span>
+          <h2 class="section-title">仕事を知る</h2>
+          <p class="section-subtitle" data-content="work_subtitle">世界をリードする表面処理技術で、あなたの可能性を広げる</p>
+        </div>
+
+        <div class="work-cards" data-animate>
+          <div class="work-card">
             <div class="work-card-img" data-visibility="work_images">
-              <img src="https://placehold.co/400x300/0d2847/ffffff?text=めっき技術" alt="めっき技術" data-content-img="work_image_1">
+              <img src="https://placehold.co/480x320/0d2847/ffffff?text=めっき技術" alt="めっき技術" data-content-img="work_image_1">
             </div>
             <div class="work-card-body">
               <h3 data-content="work_title_1">めっき技術</h3>
               <p data-content="work_desc_1">プラめっき、３価クロムめっき、サテンめっき、スモークめっき、コンポジットめっき（機能めっき）など、多様なめっき技術で製品に付加価値を与えます。</p>
-              <a href="work.html#mekki" class="work-card-link">詳しく見る <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
             </div>
           </div>
-          <div class="work-card" data-animate>
+          <div class="work-card">
             <div class="work-card-img" data-visibility="work_images">
-              <img src="https://placehold.co/400x300/0d2847/ffffff?text=塗装・蒸着" alt="塗装・蒸着技術" data-content-img="work_image_2">
+              <img src="https://placehold.co/480x320/0d2847/ffffff?text=塗装・蒸着" alt="塗装・蒸着技術" data-content-img="work_image_2">
             </div>
             <div class="work-card-body">
               <h3 data-content="work_title_2">塗装・蒸着</h3>
               <p data-content="work_desc_2">高品質な塗装技術と蒸着技術により、製品の外観品質と機能性を高次元で両立。自動車外装部品をはじめ幅広い分野に対応しています。</p>
-              <a href="work.html#tosou" class="work-card-link">詳しく見る <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
             </div>
           </div>
-          <div class="work-card" data-animate>
+          <div class="work-card">
             <div class="work-card-img" data-visibility="work_images">
-              <img src="https://placehold.co/400x300/0d2847/ffffff?text=樹脂成形" alt="樹脂成形" data-content-img="work_image_3">
+              <img src="https://placehold.co/480x320/0d2847/ffffff?text=樹脂成形" alt="樹脂成形" data-content-img="work_image_3">
             </div>
             <div class="work-card-body">
               <h3 data-content="work_title_3">樹脂成形</h3>
               <p data-content="work_desc_3">精密な樹脂成形から表面処理、組付けまでの一貫生産体制。お客様のニーズにワンストップで応える生産力が強みです。</p>
-              <a href="work.html#jushi" class="work-card-link">詳しく見る <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
             </div>
           </div>
         </div>
@@ -211,29 +191,31 @@
     </section>
 
     <!-- 教育制度 -->
-    <section class="section" id="education" aria-labelledby="education-heading">
+    <section class="section" id="education">
       <div class="container">
-        <div class="section-label" data-animate>EDUCATION</div>
-        <h2 id="education-heading" class="section-title" data-animate>教育制度</h2>
-        <p class="section-subtitle" data-animate data-content="education_subtitle">「産学協同」の精神を受け継ぎ、人材育成に力を入れています</p>
-        <div class="education-grid" data-stagger>
-          <div class="education-card" data-animate>
-            <div class="education-icon">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        <div class="section-header" data-animate>
+          <span class="section-label">EDUCATION</span>
+          <h2 class="section-title">教育制度</h2>
+          <p class="section-subtitle" data-content="education_subtitle">「産学協同」の精神を受け継ぎ、人材育成に力を入れています</p>
+        </div>
+        <div class="feature-cards" data-animate>
+          <div class="feature-card">
+            <div class="feature-card-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
             </div>
             <h3 data-content="edu_title_1">表面処理技術研修</h3>
             <p data-content="edu_desc_1">最新の表面処理技術を学ぶ研修制度を整備。毎年1〜2名が受講し、専門知識とスキルを深めています。</p>
           </div>
-          <div class="education-card" data-animate>
-            <div class="education-icon">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 12 3 12 0v-5"/></svg>
+          <div class="feature-card">
+            <div class="feature-card-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 12 3 12 0v-5"/></svg>
             </div>
             <h3 data-content="edu_title_2">文部科学省認定プログラム</h3>
             <p data-content="edu_desc_2">「職業実践力育成プログラム」に認定された集中講義を受講可能。過去5名が修了しています。</p>
           </div>
-          <div class="education-card" data-animate>
-            <div class="education-icon">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <div class="feature-card">
+            <div class="feature-card-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
             <h3 data-content="edu_title_3">OJT・メンター制度</h3>
             <p data-content="edu_desc_3">先輩社員がマンツーマンで指導するOJT制度。実務を通じて着実にスキルアップできる環境です。</p>
@@ -243,75 +225,74 @@
     </section>
 
     <!-- 福利厚生 -->
-    <section class="section section--alt" id="benefits" aria-labelledby="benefits-heading">
+    <section class="section section--accent" id="benefits">
       <div class="container">
-        <div class="section-label" data-animate>BENEFITS</div>
-        <h2 id="benefits-heading" class="section-title" data-animate>福利厚生</h2>
-        <p class="section-subtitle" data-animate data-content="benefits_subtitle">安心して長く働ける環境を整えています</p>
-        <div class="benefits-grid" data-stagger>
-          <div class="benefit-card" data-animate>
-            <div class="benefit-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div class="section-header" data-animate>
+          <span class="section-label">BENEFITS</span>
+          <h2 class="section-title">福利厚生</h2>
+          <p class="section-subtitle" data-content="benefits_subtitle">安心して長く働ける環境を整えています</p>
+        </div>
+        <div class="benefit-grid" data-animate>
+          <div class="benefit-item">
+            <div class="benefit-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
             <div><h3 data-content="benefit_title_1">住宅補助</h3><p data-content="benefit_desc_1">住宅手当の支給あり</p></div>
           </div>
-          <div class="benefit-card" data-animate>
-            <div class="benefit-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div class="benefit-item">
+            <div class="benefit-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
             <div><h3 data-content="benefit_title_2">退職金制度</h3><p data-content="benefit_desc_2">退職金制度完備</p></div>
           </div>
-          <div class="benefit-card" data-animate>
-            <div class="benefit-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+          <div class="benefit-item">
+            <div class="benefit-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
             <div><h3 data-content="benefit_title_3">健康サポート</h3><p data-content="benefit_desc_3">各種社会保険完備・定期健康診断</p></div>
           </div>
-          <div class="benefit-card" data-animate>
-            <div class="benefit-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+          <div class="benefit-item">
+            <div class="benefit-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
             <div><h3 data-content="benefit_title_4">休暇制度</h3><p data-content="benefit_desc_4">年次有給休暇・特別休暇</p></div>
           </div>
-          <div class="benefit-card" data-animate>
-            <div class="benefit-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div class="benefit-item">
+            <div class="benefit-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
             <div><h3 data-content="benefit_title_5">サークル活動</h3><p data-content="benefit_desc_5">野球部など社内サークル活動充実</p></div>
           </div>
-          <div class="benefit-card" data-animate>
-            <div class="benefit-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+          <div class="benefit-item">
+            <div class="benefit-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
             <div><h3 data-content="benefit_title_6">福利厚生施設</h3><p data-content="benefit_desc_6">グループ会社によるサービス充実</p></div>
-          </div>
-        </div>
-        <div class="benefits-media" data-animate data-visibility="benefits_image">
-          <div class="media-slot">
-            <img src="https://placehold.co/800x400/0d2847/ffffff?text=福利厚生イメージ" alt="福利厚生" data-content-img="benefits_image">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- サークル活動・地域貢献 -->
-    <section class="section" id="activities" aria-labelledby="activities-heading">
+    <!-- 活動紹介 -->
+    <section class="section" id="activities">
       <div class="container">
-        <div class="section-label" data-animate>ACTIVITIES</div>
-        <h2 id="activities-heading" class="section-title" data-animate>サークル活動・地域貢献</h2>
-        <p class="section-subtitle" data-animate data-content="activities_subtitle">仕事だけじゃない。仲間との絆を深める活動が充実しています。</p>
-        <div class="activities-grid" data-stagger>
-          <div class="activity-card" data-animate>
-            <div class="activity-card-img" data-visibility="activity_images">
-              <img src="https://placehold.co/500x350/0d2847/ffffff?text=野球部" alt="野球部の活動" data-content-img="activity_image_1">
+        <div class="section-header" data-animate>
+          <span class="section-label">ACTIVITIES</span>
+          <h2 class="section-title">サークル活動・地域貢献</h2>
+          <p class="section-subtitle" data-content="activities_subtitle">仕事だけじゃない。仲間との絆を深める活動が充実しています。</p>
+        </div>
+        <div class="activity-list" data-animate>
+          <div class="activity-row">
+            <div class="activity-img" data-visibility="activity_images">
+              <img src="https://placehold.co/480x320/0d2847/ffffff?text=野球部" alt="野球部の活動" data-content-img="activity_image_1">
             </div>
-            <div class="activity-card-body">
+            <div class="activity-body">
               <h3 data-content="activity_title_1">野球部</h3>
               <p data-content="activity_desc_1">社内野球部が活動中。チームワークを大切にし、社員同士の交流の場となっています。</p>
             </div>
           </div>
-          <div class="activity-card" data-animate>
-            <div class="activity-card-img" data-visibility="activity_images">
-              <img src="https://placehold.co/500x350/0d2847/ffffff?text=リトルシニア支援" alt="横須賀三浦リトルシニア" data-content-img="activity_image_2">
+          <div class="activity-row activity-row--reverse">
+            <div class="activity-img" data-visibility="activity_images">
+              <img src="https://placehold.co/480x320/0d2847/ffffff?text=リトルシニア支援" alt="横須賀三浦リトルシニア" data-content-img="activity_image_2">
             </div>
-            <div class="activity-card-body">
+            <div class="activity-body">
               <h3 data-content="activity_title_2">リトルシニア支援</h3>
               <p data-content="activity_desc_2">日本リトルシニア中学硬式野球協会 関東連盟所属の「横須賀三浦リトルシニア」を応援。社有マイクロバスでの送迎など、地域の子どもたちの成長を支援しています。</p>
             </div>
           </div>
-          <div class="activity-card" data-animate>
-            <div class="activity-card-img" data-visibility="activity_images">
-              <img src="https://placehold.co/500x350/0d2847/ffffff?text=地域イベント" alt="地域イベントへの参加" data-content-img="activity_image_3">
+          <div class="activity-row">
+            <div class="activity-img" data-visibility="activity_images">
+              <img src="https://placehold.co/480x320/0d2847/ffffff?text=地域イベント" alt="地域イベントへの参加" data-content-img="activity_image_3">
             </div>
-            <div class="activity-card-body">
+            <div class="activity-body">
               <h3 data-content="activity_title_3">地域イベント</h3>
               <p data-content="activity_desc_3">国際フロンティアメッセ（みなと元気めっせ）に出展し「ベスト展示賞/特別賞」を受賞。地域社会への貢献にも積極的に取り組んでいます。</p>
             </div>
@@ -321,12 +302,14 @@
     </section>
 
     <!-- 募集要項 -->
-    <section class="section section--alt" id="requirements" aria-labelledby="requirements-heading">
+    <section class="section section--accent" id="requirements">
       <div class="container">
-        <div class="section-label" data-animate>REQUIREMENTS</div>
-        <h2 id="requirements-heading" class="section-title" data-animate>募集要項</h2>
-        <div class="requirements-card" data-animate>
-          <h3 class="requirements-type" data-content="req_type">新卒採用（2027年卒）</h3>
+        <div class="section-header" data-animate>
+          <span class="section-label">REQUIREMENTS</span>
+          <h2 class="section-title">募集要項</h2>
+        </div>
+        <div class="req-card" data-animate>
+          <h3 class="req-type" data-content="req_type">新卒採用（2027年卒）</h3>
           <dl class="info-list">
             <div class="info-row"><dt>募集職種</dt><dd data-content="req_positions">技術職（生産技術・品質管理・研究開発）、事務職（総務・経理・営業）</dd></div>
             <div class="info-row"><dt>応募資格</dt><dd data-content="req_qualifications">2027年3月に大学・大学院・短大・専門学校・高等専門学校を卒業見込みの方</dd></div>
@@ -334,20 +317,29 @@
             <div class="info-row"><dt>採用予定人数</dt><dd data-content="req_count">6〜10名</dd></div>
             <div class="info-row"><dt>選考フロー</dt><dd data-content="req_flow">マイナビよりエントリー → 会社説明会 → 書類選考 → 面接（複数回） → 内定</dd></div>
           </dl>
-          <div class="requirements-note">
-            <p>※ 詳しい募集条件・待遇については、マイナビのエントリーページをご確認ください。</p>
+        </div>
+
+        <div class="selection-flow" data-animate>
+          <h3 class="selection-flow-title">選考の流れ</h3>
+          <div class="flow-steps">
+            <div class="flow-step"><span class="flow-num">1</span><span class="flow-text">エントリー</span></div>
+            <div class="flow-step"><span class="flow-num">2</span><span class="flow-text">会社説明会</span></div>
+            <div class="flow-step"><span class="flow-num">3</span><span class="flow-text">書類選考</span></div>
+            <div class="flow-step"><span class="flow-num">4</span><span class="flow-text">面接</span></div>
+            <div class="flow-step"><span class="flow-num">5</span><span class="flow-text">内定</span></div>
           </div>
         </div>
-        <div class="requirements-events" data-animate>
+
+        <div class="event-area" data-animate>
           <h3>開催中のイベント</h3>
           <div class="event-cards">
             <div class="event-card">
-              <div class="event-badge">受付中</div>
+              <span class="event-badge">受付中</span>
               <h4 data-content="event_title_1">1DAY職場体験</h4>
               <p data-content="event_desc_1">実際の製造現場を体験できるプログラムです。表面処理技術の世界を肌で感じてみませんか？</p>
             </div>
             <div class="event-card">
-              <div class="event-badge">受付中</div>
+              <span class="event-badge">受付中</span>
               <h4 data-content="event_title_2">Webセミナー</h4>
               <p data-content="event_desc_2">オンラインで参加可能な会社説明会。関東化成工業の魅力を詳しくご紹介します。</p>
             </div>
@@ -357,22 +349,23 @@
     </section>
 
     <!-- エントリー -->
-    <section class="entry-section" id="entry" aria-labelledby="entry-heading">
-      <div class="container entry-container">
-        <div class="section-label section-label--light" data-animate>ENTRY</div>
-        <h2 id="entry-heading" class="section-title section-title--light" data-animate>エントリー・お問い合わせ</h2>
-        <p class="entry-desc" data-animate data-content="entry_desc">関東化成工業に興味を持ってくださった方、まずはお気軽にエントリーください。</p>
-        <div class="entry-buttons" data-animate>
+    <section class="entry-section" id="entry">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <span class="section-label section-label--light">ENTRY</span>
+          <h2 class="section-title section-title--light">エントリー・お問い合わせ</h2>
+          <p class="entry-desc" data-content="entry_desc">関東化成工業に興味を持ってくださった方、まずはお気軽にエントリーください。</p>
+        </div>
+        <div class="entry-cta" data-animate>
           <a href="https://job.mynavi.jp/26/pc/search/corp50547/outline.html" target="_blank" rel="noopener noreferrer" class="btn btn-entry" id="entry-link">
             <span class="btn-entry-label">マイナビからエントリー</span>
             <span class="btn-entry-sub">新卒採用 2027年卒</span>
           </a>
         </div>
         <div class="entry-contact" data-animate>
-          <h3>採用に関するお問い合わせ</h3>
           <p data-content="entry_department">関東化成工業株式会社 経営管理本部 総務部 総務人事課</p>
           <p class="entry-tel">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             <span data-content="entry_tel">046-835-4600</span>
           </p>
         </div>
@@ -381,27 +374,26 @@
   </main>
 
   <!-- トップへ戻る -->
-  <button class="back-to-top" aria-label="ページトップへ戻る">
+  <button class="back-to-top" id="back-to-top" aria-label="ページトップへ戻る">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
   </button>
 
   <!-- フッター -->
   <footer class="footer">
-    <div class="container footer-grid">
+    <div class="container footer-inner">
       <div class="footer-col">
         <p class="footer-logo">関東化成工業株式会社</p>
         <p class="footer-en">KANTO KASEI CO., LTD.</p>
-        <p class="footer-desc">〒239-0806<br>神奈川県横須賀市池田町4-4-1<br>TEL: 046-835-4600</p>
+        <p class="footer-addr">〒239-0806<br>神奈川県横須賀市池田町4-4-1<br>TEL: 046-835-4600</p>
       </div>
       <div class="footer-col">
         <h3 class="footer-heading">採用情報</h3>
         <ul class="footer-nav">
-          <li><a href="index.html#about">私たちについて</a></li>
-          <li><a href="work.html">仕事を知る</a></li>
-          <li><a href="education.html">教育制度</a></li>
-          <li><a href="benefits.html">福利厚生</a></li>
-          <li><a href="activities.html">活動紹介</a></li>
-          <li><a href="requirements.html">募集要項</a></li>
+          <li><a href="#about">私たちについて</a></li>
+          <li><a href="#work">仕事を知る</a></li>
+          <li><a href="#education">教育制度</a></li>
+          <li><a href="#benefits">福利厚生</a></li>
+          <li><a href="#requirements">募集要項</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -412,11 +404,7 @@
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <p>&copy; 2026 関東化成工業株式会社 All Rights Reserved.</p>
-      </div>
-    </div>
+    <div class="footer-bottom"><div class="container"><p>&copy; 2026 関東化成工業株式会社 All Rights Reserved.</p></div></div>
   </footer>
 
   <script src="storage.js"></script>
