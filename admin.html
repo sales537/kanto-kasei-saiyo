@@ -45,6 +45,10 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
           募集要項
         </a>
+        <a href="#sec-company" class="sidebar-link" data-section="sec-company">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
+          会社概要
+        </a>
         <a href="#sec-entry" class="sidebar-link" data-section="sec-entry">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
           エントリー
@@ -145,14 +149,42 @@
             </div>
           </div>
           <div class="admin-card">
-            <h3 class="admin-card-title">会社概要テーブル</h3>
-            <div class="field"><label>会社名</label><input type="text" data-field="texts.company_name" value="関東化成工業株式会社（KANTO KASEI CO., LTD.）"></div>
-            <div class="field"><label>設立</label><input type="text" data-field="texts.company_founded" value="1969年（昭和44年） ※1946年 旧制関東学院工業専門学校実習工場として創業"></div>
-            <div class="field"><label>本社所在地</label><input type="text" data-field="texts.company_address" value="〒239-0806 神奈川県横須賀市池田町4-4-1"></div>
-            <div class="field"><label>従業員数</label><input type="text" data-field="texts.company_employees" value="406名"></div>
-            <div class="field"><label>事業内容</label><textarea data-field="texts.company_business" rows="2">樹脂成形、各種表面処理加工（めっき・塗装・蒸着）、組付の一貫生産</textarea></div>
-            <div class="field"><label>主要取引先</label><textarea data-field="texts.company_clients" rows="2">トヨタ自動車、トヨタ自動車東日本、トヨタ車体、日野自動車、豊田自動織機、ダイハツ工業、日産自動車、スズキ、ファナック 他</textarea></div>
-            <div class="field"><label>拠点</label><input type="text" data-field="texts.company_locations" value="本社工場（横須賀市）、岩手工場（一関市）、インドネシア合弁工場"></div>
+            <h3 class="admin-card-title">部活動・地域貢献 セクション設定</h3>
+            <div class="field"><label>ブロックタイトル</label><input type="text" data-field="texts.club_title" value="部活動・地域貢献"></div>
+            <div class="field"><label>リード文</label><textarea data-field="texts.club_lead" rows="2">仕事のその先にも、仲間と楽しむ時間があります。スポーツや地域との交流を通じて、社員同士の絆を深めています。</textarea></div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">部活動カード 1</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.club_title_1" value="野球部"></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.club_desc_1" rows="3">社員有志による野球部。練習や大会を通じて、部署を越えた交流が生まれています。未経験者も大歓迎。仲間と汗を流すリフレッシュの時間です。</textarea></div>
+            <div class="field"><label>画像</label>
+              <div class="upload-zone" data-upload="images.club_image_1" data-accept="image/*">
+                <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
+                <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
+              </div>
+            </div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">部活動カード 2</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.club_title_2" value="地域スポーツ支援"></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.club_desc_2" rows="3">「横須賀三浦リトルシニア」へマイクロバスによる送迎を提供するなど、地域で頑張る子どもたちを応援しています。地元とともに歩む企業であり続けます。</textarea></div>
+            <div class="field"><label>画像</label>
+              <div class="upload-zone" data-upload="images.club_image_2" data-accept="image/*">
+                <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
+                <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
+              </div>
+            </div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">部活動カード 3</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.club_title_3" value="サークル活動・社外表彰"></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.club_desc_3" rows="3">ゴルフ・フットサルなど有志サークルが活動中。国際フロンティアメッセへの出展ではベスト展示賞を受賞するなど、社外の舞台でも仲間と挑戦を続けています。</textarea></div>
+            <div class="field"><label>画像</label>
+              <div class="upload-zone" data-upload="images.club_image_3" data-accept="image/*">
+                <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
+                <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -355,7 +387,21 @@
           </div>
         </section>
 
-        <!-- ⑧ エントリー -->
+        <!-- ⑧ 会社概要 -->
+        <section class="admin-section" id="sec-company" style="display:none;">
+          <div class="admin-card">
+            <h3 class="admin-card-title">会社概要テーブル</h3>
+            <div class="field"><label>会社名</label><input type="text" data-field="texts.company_name" value="関東化成工業株式会社（KANTO KASEI CO., LTD.）"></div>
+            <div class="field"><label>設立</label><input type="text" data-field="texts.company_founded" value="1969年（昭和44年） ※1946年 旧制関東学院工業専門学校実習工場として創業"></div>
+            <div class="field"><label>本社所在地</label><input type="text" data-field="texts.company_address" value="〒239-0806 神奈川県横須賀市池田町4-4-1"></div>
+            <div class="field"><label>従業員数</label><input type="text" data-field="texts.company_employees" value="406名"></div>
+            <div class="field"><label>事業内容</label><textarea data-field="texts.company_business" rows="2">樹脂成形、各種表面処理加工（めっき・塗装・蒸着）、組付の一貫生産</textarea></div>
+            <div class="field"><label>主要取引先</label><textarea data-field="texts.company_clients" rows="2">トヨタ自動車、トヨタ自動車東日本、トヨタ車体、日野自動車、豊田自動織機、ダイハツ工業、日産自動車、スズキ、ファナック 他</textarea></div>
+            <div class="field"><label>拠点</label><input type="text" data-field="texts.company_locations" value="本社工場（横須賀市）、岩手工場（一関市）、インドネシア合弁工場"></div>
+          </div>
+        </section>
+
+        <!-- ⑨ エントリー -->
         <section class="admin-section" id="sec-entry" style="display:none;">
           <div class="admin-card">
             <h3 class="admin-card-title">エントリーセクション</h3>
@@ -379,6 +425,12 @@
             <div class="toggle-group">
               <h4 class="toggle-group-title">会社紹介</h4>
               <div class="toggle-item"><label class="toggle-label"><span>メイン画像</span><div class="toggle-switch"><input type="checkbox" data-field="visibility.about_image_1" checked><span class="toggle-slider"></span></div></label></div>
+            </div>
+            <div class="toggle-group">
+              <h4 class="toggle-group-title">部活動・地域貢献</h4>
+              <div class="toggle-item"><label class="toggle-label"><span>カード1 画像（野球部）</span><div class="toggle-switch"><input type="checkbox" data-field="visibility.club_image_1" checked><span class="toggle-slider"></span></div></label></div>
+              <div class="toggle-item"><label class="toggle-label"><span>カード2 画像（地域スポーツ支援）</span><div class="toggle-switch"><input type="checkbox" data-field="visibility.club_image_2" checked><span class="toggle-slider"></span></div></label></div>
+              <div class="toggle-item"><label class="toggle-label"><span>カード3 画像（サークル活動）</span><div class="toggle-switch"><input type="checkbox" data-field="visibility.club_image_3" checked><span class="toggle-slider"></span></div></label></div>
             </div>
           </div>
         </section>

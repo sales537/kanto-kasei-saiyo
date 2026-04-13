@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200">
+  <defs>
+    <linearGradient id="ccbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8ecf6"/>
+      <stop offset="100%" stop-color="#f5f7fb"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="200" fill="url(#ccbg)"/>
+
+  <!-- 地面 -->
+  <rect x="0" y="155" width="320" height="45" fill="#c8d5b9"/>
+  <rect x="0" y="153" width="320" height="3" fill="#a8b898"/>
+
+  <!-- ハート（支援・地域貢献のシンボル） -->
+  <g transform="translate(160 78)">
+    <path d="M 0 22 L -22 0 Q -32 -12 -22 -22 Q -12 -30 0 -18 Q 12 -30 22 -22 Q 32 -12 22 0 Z" fill="#d13a3a" opacity="0.15"/>
+    <path d="M 0 18 L -18 0 Q -26 -10 -18 -18 Q -10 -24 0 -14 Q 10 -24 18 -18 Q 26 -10 18 0 Z" fill="#d13a3a"/>
+  </g>
+
+  <!-- 人々（みんなで支え合う） -->
+  <!-- 左：大人1 -->
+  <g transform="translate(70 140)">
+    <rect x="-11" y="-6" width="22" height="22" rx="3" fill="#233e91"/>
+    <circle cx="0" cy="-14" r="8" fill="#f1d5a0"/>
+    <path d="M -7 -20 Q 0 -24 7 -20 L 7 -17 L -7 -17 Z" fill="#3a2d1f"/>
+  </g>
+
+  <!-- 子ども1（少し小さい） -->
+  <g transform="translate(105 145)">
+    <rect x="-8" y="-4" width="16" height="18" rx="2" fill="#c8a84e"/>
+    <circle cx="0" cy="-10" r="6" fill="#f1d5a0"/>
+    <path d="M -5 -14 Q 0 -17 5 -14 L 5 -12 L -5 -12 Z" fill="#3a2d1f"/>
+    <!-- キャップ -->
+    <path d="M -6 -14 L 6 -14 L 6 -16 Q 0 -18 -6 -16 Z" fill="#233e91"/>
+  </g>
+
+  <!-- 大人2（中央） -->
+  <g transform="translate(160 138)">
+    <rect x="-12" y="-6" width="24" height="23" rx="3" fill="#2d4ea6"/>
+    <circle cx="0" cy="-14" r="8" fill="#f1d5a0"/>
+    <path d="M -7 -20 Q 0 -24 7 -20 L 7 -17 L -7 -17 Z" fill="#3a2d1f"/>
+  </g>
+
+  <!-- 子ども2 -->
+  <g transform="translate(195 145)">
+    <rect x="-8" y="-4" width="16" height="18" rx="2" fill="#c8a84e"/>
+    <circle cx="0" cy="-10" r="6" fill="#f1d5a0"/>
+    <path d="M -5 -14 Q 0 -17 5 -14 L 5 -12 L -5 -12 Z" fill="#3a2d1f"/>
+    <path d="M -6 -14 L 6 -14 L 6 -16 Q 0 -18 -6 -16 Z" fill="#233e91"/>
+  </g>
+
+  <!-- 大人3（右） -->
+  <g transform="translate(240 140)">
+    <rect x="-11" y="-6" width="22" height="22" rx="3" fill="#233e91"/>
+    <circle cx="0" cy="-14" r="8" fill="#f1d5a0"/>
+    <path d="M -7 -20 Q 0 -24 7 -20 L 7 -17 L -7 -17 Z" fill="#3a2d1f"/>
+  </g>
+
+  <!-- 応援バナー -->
+  <g transform="translate(40 50)">
+    <rect x="0" y="0" width="80" height="22" fill="#c8a84e" transform="skewX(-6)"/>
+    <text x="42" y="15" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="11" fill="#233e91" transform="skewX(-6)">応援</text>
+  </g>
+
+  <!-- マイクロバスのアイコン -->
+  <g transform="translate(260 50)">
+    <rect x="-22" y="-8" width="44" height="18" rx="3" fill="#ffffff" stroke="#233e91" stroke-width="1.5"/>
+    <rect x="-18" y="-5" width="10" height="8" fill="#a8c0e8"/>
+    <rect x="-6" y="-5" width="10" height="8" fill="#a8c0e8"/>
+    <rect x="6" y="-5" width="10" height="8" fill="#a8c0e8"/>
+    <circle cx="-12" cy="12" r="4" fill="#233e91"/>
+    <circle cx="14" cy="12" r="4" fill="#233e91"/>
+  </g>
+</svg>

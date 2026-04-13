@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200">
+  <defs>
+    <linearGradient id="bbbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a8c8e8"/>
+      <stop offset="60%" stop-color="#cfe0f1"/>
+      <stop offset="100%" stop-color="#8ab87a"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="200" fill="url(#bbbg)"/>
+
+  <!-- 芝生 -->
+  <rect x="0" y="130" width="320" height="70" fill="#6fa35a"/>
+  <g fill="#7db567" opacity="0.6">
+    <rect x="0" y="130" width="320" height="4"/>
+    <rect x="0" y="140" width="320" height="2" opacity="0.5"/>
+  </g>
+
+  <!-- 内野のダイヤモンド（土） -->
+  <polygon points="160,135 250,180 160,200 70,180" fill="#c69c6d"/>
+  <polygon points="160,145 235,180 160,192 85,180" fill="#d4ac7e"/>
+
+  <!-- ベース -->
+  <rect x="156" y="143" width="8" height="8" fill="#ffffff" transform="rotate(45 160 147)"/>
+  <rect x="231" y="176" width="8" height="8" fill="#ffffff" transform="rotate(45 235 180)"/>
+  <rect x="156" y="188" width="8" height="8" fill="#ffffff" transform="rotate(45 160 192)"/>
+  <rect x="81" y="176" width="8" height="8" fill="#ffffff" transform="rotate(45 85 180)"/>
+
+  <!-- ピッチャーマウンド -->
+  <ellipse cx="160" cy="165" rx="10" ry="5" fill="#b88a5a"/>
+
+  <!-- 野球ボール（大） -->
+  <g transform="translate(240 60)">
+    <circle cx="0" cy="0" r="28" fill="#ffffff" stroke="#233e91" stroke-width="1.5"/>
+    <path d="M -22 -10 Q 0 -18 22 -10" fill="none" stroke="#d13a3a" stroke-width="1.5"/>
+    <path d="M -22 10 Q 0 18 22 10" fill="none" stroke="#d13a3a" stroke-width="1.5"/>
+    <!-- 縫い目 -->
+    <g stroke="#d13a3a" stroke-width="1" stroke-linecap="round">
+      <line x1="-20" y1="-8" x2="-16" y2="-6"/>
+      <line x1="-14" y1="-12" x2="-10" y2="-10"/>
+      <line x1="-7" y1="-15" x2="-3" y2="-13"/>
+      <line x1="3" y1="-16" x2="7" y2="-14"/>
+      <line x1="12" y1="-14" x2="16" y2="-12"/>
+      <line x1="-20" y1="8" x2="-16" y2="6"/>
+      <line x1="-14" y1="12" x2="-10" y2="10"/>
+      <line x1="-7" y1="15" x2="-3" y2="13"/>
+      <line x1="3" y1="16" x2="7" y2="14"/>
+      <line x1="12" y1="14" x2="16" y2="12"/>
+    </g>
+  </g>
+
+  <!-- バット -->
+  <g transform="translate(75 80) rotate(-40)">
+    <rect x="-4" y="-50" width="8" height="50" rx="3" fill="#c69c6d"/>
+    <rect x="-3" y="0" width="6" height="18" fill="#8a6f4f"/>
+    <rect x="-5" y="18" width="10" height="4" rx="1" fill="#5a4530"/>
+  </g>
+
+  <!-- グローブ -->
+  <g transform="translate(60 150)">
+    <path d="M -20 0 Q -22 -20 -8 -22 Q -4 -22 -2 -18 L 0 -24 Q 4 -26 8 -22 Q 20 -20 18 0 Q 18 12 0 14 Q -18 12 -20 0 Z" fill="#8a6f4f"/>
+    <path d="M -14 -10 Q -10 -16 -4 -14" fill="none" stroke="#5a4530" stroke-width="1"/>
+  </g>
+
+  <!-- タイトルバッジ -->
+  <g transform="translate(160 28)">
+    <rect x="-62" y="-14" width="124" height="28" rx="14" fill="#233e91"/>
+    <text x="0" y="5" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="14" fill="#ffffff">野球部</text>
+  </g>
+</svg>
