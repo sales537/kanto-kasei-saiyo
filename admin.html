@@ -11,7 +11,6 @@
 </head>
 <body>
   <div class="admin-layout">
-    <!-- サイドバー -->
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-header">
         <h1 class="sidebar-logo">LP管理画面</h1>
@@ -24,27 +23,23 @@
         </a>
         <a href="#sec-about" class="sidebar-link" data-section="sec-about">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-          私たちについて
+          会社紹介
         </a>
-        <a href="#sec-stats" class="sidebar-link" data-section="sec-stats">
+        <a href="#sec-appeal" class="sidebar-link" data-section="sec-appeal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          アピールポイント
+        </a>
+        <a href="#sec-numbers" class="sidebar-link" data-section="sec-numbers">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
-          数字セクション
+          数字で見る
         </a>
-        <a href="#sec-work" class="sidebar-link" data-section="sec-work">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-          仕事を知る
-        </a>
-        <a href="#sec-education" class="sidebar-link" data-section="sec-education">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-          教育制度
+        <a href="#sec-career" class="sidebar-link" data-section="sec-career">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg>
+          キャリアステップ
         </a>
         <a href="#sec-benefits" class="sidebar-link" data-section="sec-benefits">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           福利厚生
-        </a>
-        <a href="#sec-activities" class="sidebar-link" data-section="sec-activities">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          サークル・地域
         </a>
         <a href="#sec-requirements" class="sidebar-link" data-section="sec-requirements">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
@@ -86,12 +81,9 @@
       </div>
     </aside>
 
-    <!-- メインコンテンツ -->
     <main class="admin-main">
       <div class="admin-topbar">
-        <button class="topbar-menu" id="topbar-menu">
-          <span></span><span></span><span></span>
-        </button>
+        <button class="topbar-menu" id="topbar-menu"><span></span><span></span><span></span></button>
         <h2 class="topbar-title" id="topbar-title">ヒーロー</h2>
         <div class="topbar-badges">
           <span class="badge badge--draft" id="badge-draft" style="display:none;">下書きあり</span>
@@ -101,7 +93,7 @@
       </div>
 
       <div class="admin-content" id="admin-content">
-        <!-- ===== ヒーロー ===== -->
+        <!-- ① ヒーロー -->
         <section class="admin-section" id="sec-hero">
           <div class="admin-card">
             <h3 class="admin-card-title">メインビジュアル</h3>
@@ -117,106 +109,54 @@
                 <button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
               </div>
             </div>
-            <div class="field">
-              <label>背景動画（mp4ファイル ※画像の代わりに動画を使う場合）</label>
-              <div class="upload-zone" data-upload="heroVideo" data-accept="video/mp4,video/webm">
-                <div class="upload-zone-content">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-                  <p>クリックまたはドラッグ&ドロップで動画をアップロード</p>
-                  <span class="upload-zone-hint">MP4, WebM（最大100MB）</span>
-                </div>
-                <div class="upload-zone-preview"></div>
-                <button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
-              </div>
-            </div>
           </div>
           <div class="admin-card">
             <h3 class="admin-card-title">テキスト</h3>
             <div class="field">
               <label>メインコピー</label>
-              <textarea data-field="texts.hero_title" rows="2">技術を磨く、
-未来を創る。</textarea>
-              <span class="field-hint">改行は&lt;br&gt;として反映されます</span>
+              <textarea data-field="texts.hero_title" rows="2">世界初のプラめっきから60年。
+表面処理の未来を、共に。</textarea>
             </div>
             <div class="field">
               <label>サブコピー</label>
-              <textarea data-field="texts.hero_subtitle" rows="3">世界初のプラめっき商品化から60年。
-表面処理のエキスパートとして挑戦し続ける仲間を求めています。</textarea>
+              <textarea data-field="texts.hero_subtitle" rows="2">樹脂成形からめっき・塗装・蒸着・組付まで、一貫生産で世界品質を届ける。</textarea>
             </div>
           </div>
         </section>
 
-        <!-- ===== 私たちについて ===== -->
+        <!-- ② 会社紹介 -->
         <section class="admin-section" id="sec-about" style="display:none;">
           <div class="admin-card">
-            <h3 class="admin-card-title">CI・説明文</h3>
-            <div class="field">
-              <label>CI（企業理念）</label>
-              <input type="text" data-field="texts.about_ci" value="「人になれ、奉仕せよ」">
-            </div>
-            <div class="field">
-              <label>会社紹介文</label>
-              <textarea data-field="texts.about_desc" rows="6">関東化成工業は、1963年に世界で初めてプラめっきを商品化して以来、３価クロムめっき、サテンめっき、スモークめっきなどの独自技術を開発し、表面処理業界のトップランナーとして国内外から厚い信頼を得ています。
+            <h3 class="admin-card-title">見出し・説明文</h3>
+            <div class="field"><label>セクションタイトル</label><input type="text" data-field="texts.about_title" value="世界初のプラめっきで、未来をつくる"></div>
+            <div class="field"><label>CI（企業理念）</label><input type="text" data-field="texts.about_ci" value="「人になれ、奉仕せよ」"></div>
+            <div class="field"><label>会社紹介文</label><textarea data-field="texts.about_desc" rows="6">関東化成工業は、1963年に世界で初めてプラめっきを商品化して以来、３価クロムめっき、サテンめっき、スモークめっきなどの独自技術を開発し、表面処理業界のトップランナーとして国内外から厚い信頼を得ています。
 
-「産学協同」を礎に、樹脂成形から各種表面処理加工（めっき・塗装・蒸着）、組付まで一貫生産体制を確立。自動車外装用製品をはじめ、さまざまな分野でその技術力を発揮しています。</textarea>
-            </div>
+「産学協同」を礎に、樹脂成形から各種表面処理加工（めっき・塗装・蒸着）、組付まで一貫生産体制を確立。自動車外装用製品をはじめ、さまざまな分野でその技術力を発揮しています。</textarea></div>
           </div>
           <div class="admin-card">
-            <h3 class="admin-card-title">画像</h3>
-            <div class="field-row">
-              <div class="field">
-                <label>画像1</label>
-                <div class="upload-zone" data-upload="images.about_image_1" data-accept="image/*">
-                  <div class="upload-zone-content">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                    <p>画像をアップロード</p>
-                  </div>
-                  <div class="upload-zone-preview"></div>
-                  <button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
-                </div>
-                <div class="field"><label>キャプション1</label><input type="text" data-field="texts.about_caption_1" value="本社工場外観"></div>
-              </div>
-              <div class="field">
-                <label>画像2</label>
-                <div class="upload-zone" data-upload="images.about_image_2" data-accept="image/*">
-                  <div class="upload-zone-content">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                    <p>画像をアップロード</p>
-                  </div>
-                  <div class="upload-zone-preview"></div>
-                  <button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
-                </div>
-                <div class="field"><label>キャプション2</label><input type="text" data-field="texts.about_caption_2" value="製造現場の様子"></div>
+            <h3 class="admin-card-title">メイン画像</h3>
+            <div class="field">
+              <label>社屋・集合写真など</label>
+              <div class="upload-zone" data-upload="images.about_image_1" data-accept="image/*">
+                <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
+                <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
               </div>
             </div>
           </div>
           <div class="admin-card">
             <h3 class="admin-card-title">会社紹介動画</h3>
             <div class="field">
-              <label>動画ファイルをアップロード、またはYouTube/Vimeo URLを入力</label>
-              <div class="upload-zone" data-upload="videos.about_video" data-accept="video/mp4,video/webm">
-                <div class="upload-zone-content">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-                  <p>動画をアップロード</p>
-                </div>
-                <div class="upload-zone-preview"></div>
-                <button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
-              </div>
-              <div class="field" style="margin-top: 0.75rem;">
-                <label>または YouTube / Vimeo URL</label>
-                <input type="url" data-field="videos.about_video" placeholder="https://www.youtube.com/watch?v=xxxxx">
-                <span class="field-hint">URLを入力すると埋め込みプレーヤーが表示されます</span>
-                <div class="field-video-preview" data-video-preview="videos.about_video"></div>
-              </div>
+              <label>YouTube / Vimeo URL</label>
+              <input type="url" data-field="videos.about_video" placeholder="https://www.youtube.com/watch?v=xxxxx">
+              <span class="field-hint">URLを入力すると埋め込みプレーヤーが表示されます</span>
             </div>
           </div>
           <div class="admin-card">
-            <h3 class="admin-card-title">会社概要</h3>
+            <h3 class="admin-card-title">会社概要テーブル</h3>
             <div class="field"><label>会社名</label><input type="text" data-field="texts.company_name" value="関東化成工業株式会社（KANTO KASEI CO., LTD.）"></div>
             <div class="field"><label>設立</label><input type="text" data-field="texts.company_founded" value="1969年（昭和44年） ※1946年 旧制関東学院工業専門学校実習工場として創業"></div>
             <div class="field"><label>本社所在地</label><input type="text" data-field="texts.company_address" value="〒239-0806 神奈川県横須賀市池田町4-4-1"></div>
-            <div class="field"><label>TEL</label><input type="text" data-field="texts.company_tel" value="046-835-4600"></div>
-            <div class="field"><label>資本金</label><input type="text" data-field="texts.company_capital" value="2億円"></div>
             <div class="field"><label>従業員数</label><input type="text" data-field="texts.company_employees" value="406名"></div>
             <div class="field"><label>事業内容</label><textarea data-field="texts.company_business" rows="2">樹脂成形、各種表面処理加工（めっき・塗装・蒸着）、組付の一貫生産</textarea></div>
             <div class="field"><label>主要取引先</label><textarea data-field="texts.company_clients" rows="2">トヨタ自動車、トヨタ自動車東日本、トヨタ車体、日野自動車、豊田自動織機、ダイハツ工業、日産自動車、スズキ、ファナック 他</textarea></div>
@@ -224,10 +164,62 @@
           </div>
         </section>
 
-        <!-- ===== 数字セクション ===== -->
-        <section class="admin-section" id="sec-stats" style="display:none;">
+        <!-- ③ アピールポイント -->
+        <section class="admin-section" id="sec-appeal" style="display:none;">
           <div class="admin-card">
-            <h3 class="admin-card-title">数字で見る関東化成</h3>
+            <h3 class="admin-card-title">セクション設定</h3>
+            <div class="field"><label>セクションタイトル</label><input type="text" data-field="texts.appeal_title" value="関東化成が選ばれる理由"></div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">アピールカード 1</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.appeal_title_1" value="一貫生産体制"></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.appeal_desc_1" rows="3">樹脂成形からめっき・塗装・蒸着・組付まで、すべてを自社で完結。高品質なモノづくりを実現しています。</textarea></div>
+            <div class="field"><label>画像</label>
+              <div class="upload-zone" data-upload="images.appeal_image_1" data-accept="image/*">
+                <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
+                <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
+              </div>
+            </div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">アピールカード 2</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.appeal_title_2" value="世界初の技術力"></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.appeal_desc_2" rows="3">プラめっきの商品化をはじめ、3価クロムめっきやサテンめっきなど、業界をリードする独自技術を保有しています。</textarea></div>
+            <div class="field"><label>画像</label>
+              <div class="upload-zone" data-upload="images.appeal_image_2" data-accept="image/*">
+                <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
+                <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
+              </div>
+            </div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">アピールカード 3</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.appeal_title_3" value="グローバル展開"></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.appeal_desc_3" rows="3">国内3拠点に加え、インドネシアに合弁工場を展開。トヨタをはじめとする700社以上との取引実績があります。</textarea></div>
+            <div class="field"><label>画像</label>
+              <div class="upload-zone" data-upload="images.appeal_image_3" data-accept="image/*">
+                <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
+                <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
+              </div>
+            </div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">アピールカード 4</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.appeal_title_4" value="充実の研修制度"></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.appeal_desc_4" rows="3">産学協同の理念のもと、入社後の研修から技術習得まで、一人ひとりの成長を支援する体制が整っています。</textarea></div>
+            <div class="field"><label>画像</label>
+              <div class="upload-zone" data-upload="images.appeal_image_4" data-accept="image/*">
+                <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
+                <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ④ 数字で見る -->
+        <section class="admin-section" id="sec-numbers" style="display:none;">
+          <div class="admin-card">
+            <h3 class="admin-card-title">数字（4項目）</h3>
             <div class="stat-editor">
               <div class="stat-editor-item">
                 <h4>数字 1</h4>
@@ -237,8 +229,8 @@
               </div>
               <div class="stat-editor-item">
                 <h4>数字 2</h4>
-                <div class="field"><label>数値</label><input type="number" data-field="stats.stat_2_number" value="55"></div>
-                <div class="field"><label>単位</label><input type="text" data-field="texts.stat_2_unit" value="年以上"></div>
+                <div class="field"><label>数値</label><input type="number" data-field="stats.stat_2_number" value="60"></div>
+                <div class="field"><label>単位</label><input type="text" data-field="texts.stat_2_unit" value="年超"></div>
                 <div class="field"><label>ラベル</label><input type="text" data-field="texts.stat_2_label" value="業界での実績"></div>
               </div>
               <div class="stat-editor-item">
@@ -249,182 +241,113 @@
               </div>
               <div class="stat-editor-item">
                 <h4>数字 4</h4>
-                <div class="field"><label>数値</label><input type="number" data-field="stats.stat_4_number" value="3"></div>
-                <div class="field"><label>単位</label><input type="text" data-field="texts.stat_4_unit" value="拠点"></div>
-                <div class="field"><label>ラベル</label><input type="text" data-field="texts.stat_4_label" value="国内外の生産拠点"></div>
+                <div class="field"><label>数値</label><input type="number" data-field="stats.stat_4_number" value="700"></div>
+                <div class="field"><label>単位</label><input type="text" data-field="texts.stat_4_unit" value="社以上"></div>
+                <div class="field"><label>ラベル</label><input type="text" data-field="texts.stat_4_label" value="取引先企業"></div>
               </div>
             </div>
           </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">円グラフ（4項目）</h3>
+            <p class="admin-card-desc">ラベルのみ編集可能です。数値はstyle.cssまたはHTMLから変更してください。</p>
+            <div class="field"><label>グラフ1 ラベル</label><input type="text" data-field="texts.chart_label_1" value="有給取得率"></div>
+            <div class="field"><label>グラフ2 ラベル</label><input type="text" data-field="texts.chart_label_2" value="定着率（3年）"></div>
+            <div class="field"><label>グラフ3 ラベル</label><input type="text" data-field="texts.chart_label_3" value="20代の割合"></div>
+            <div class="field"><label>グラフ4 ラベル</label><input type="text" data-field="texts.chart_label_4" value="平均勤続年数"></div>
+          </div>
         </section>
 
-        <!-- ===== 仕事を知る ===== -->
-        <section class="admin-section" id="sec-work" style="display:none;">
+        <!-- ⑤ キャリアステップ -->
+        <section class="admin-section" id="sec-career" style="display:none;">
           <div class="admin-card">
             <h3 class="admin-card-title">セクション設定</h3>
-            <div class="field"><label>サブタイトル</label><input type="text" data-field="texts.work_subtitle" value="世界をリードする表面処理技術で、あなたの可能性を広げる"></div>
+            <div class="field"><label>セクションタイトル</label><input type="text" data-field="texts.career_title" value="あなたの成長を支えるキャリアパス"></div>
           </div>
           <div class="admin-card">
-            <h3 class="admin-card-title">仕事カード 1</h3>
-            <div class="field"><label>タイトル</label><input type="text" data-field="texts.work_title_1" value="めっき技術"></div>
-            <div class="field"><label>説明</label><textarea data-field="texts.work_desc_1" rows="3">プラめっき、３価クロムめっき、サテンめっき、スモークめっき、コンポジットめっき（機能めっき）など、多様なめっき技術で製品に付加価値を与えます。</textarea></div>
+            <h3 class="admin-card-title">1年目</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.career_title_1" value="新人研修・基礎習得"></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.career_desc_1" rows="3">入社後はビジネスマナーから専門知識まで、充実した研修プログラムで基礎を身につけます。先輩社員のOJTで現場の雰囲気にも慣れていきます。</textarea></div>
             <div class="field"><label>画像</label>
-              <div class="upload-zone" data-upload="images.work_image_1" data-accept="image/*">
+              <div class="upload-zone" data-upload="images.career_image_1" data-accept="image/*">
                 <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
                 <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
               </div>
             </div>
           </div>
           <div class="admin-card">
-            <h3 class="admin-card-title">仕事カード 2</h3>
-            <div class="field"><label>タイトル</label><input type="text" data-field="texts.work_title_2" value="塗装・蒸着"></div>
-            <div class="field"><label>説明</label><textarea data-field="texts.work_desc_2" rows="3">高品質な塗装技術と蒸着技術により、製品の外観品質と機能性を高次元で両立。自動車外装部品をはじめ幅広い分野に対応しています。</textarea></div>
+            <h3 class="admin-card-title">3年目</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.career_title_2" value="担当業務の確立"></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.career_desc_2" rows="3">自分の担当領域を持ち、プロジェクトの中核メンバーとして活躍。資格取得支援制度を活用し、専門性を高めます。</textarea></div>
             <div class="field"><label>画像</label>
-              <div class="upload-zone" data-upload="images.work_image_2" data-accept="image/*">
+              <div class="upload-zone" data-upload="images.career_image_2" data-accept="image/*">
                 <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
                 <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
               </div>
             </div>
           </div>
           <div class="admin-card">
-            <h3 class="admin-card-title">仕事カード 3</h3>
-            <div class="field"><label>タイトル</label><input type="text" data-field="texts.work_title_3" value="樹脂成形"></div>
-            <div class="field"><label>説明</label><textarea data-field="texts.work_desc_3" rows="3">精密な樹脂成形から表面処理、組付けまでの一貫生産体制。お客様のニーズにワンストップで応える生産力が強みです。</textarea></div>
+            <h3 class="admin-card-title">5年目</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.career_title_3" value="チームリーダーへ"></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.career_desc_3" rows="3">後輩の指導やプロジェクト管理を担当。マネジメントスキルを磨きながら、チーム全体の成果を高めていきます。</textarea></div>
             <div class="field"><label>画像</label>
-              <div class="upload-zone" data-upload="images.work_image_3" data-accept="image/*">
+              <div class="upload-zone" data-upload="images.career_image_3" data-accept="image/*">
                 <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
                 <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
               </div>
             </div>
           </div>
           <div class="admin-card">
-            <h3 class="admin-card-title">仕事紹介動画</h3>
-            <div class="field">
-              <label>動画ファイルまたはURL</label>
-              <div class="upload-zone" data-upload="videos.work_video" data-accept="video/mp4,video/webm">
-                <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg><p>動画をアップロード</p></div>
+            <h3 class="admin-card-title">10年目〜</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.career_title_4" value="部門のマネジメント"></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.career_desc_4" rows="3">部門全体を見渡す管理職として、戦略立案や組織づくりに携わります。海外拠点との連携やグローバルな活躍の場も広がります。</textarea></div>
+            <div class="field"><label>画像</label>
+              <div class="upload-zone" data-upload="images.career_image_4" data-accept="image/*">
+                <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
                 <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
               </div>
-              <div class="field" style="margin-top: 0.75rem;">
-                <label>または YouTube / Vimeo URL</label>
-                <input type="url" data-field="videos.work_video" placeholder="https://www.youtube.com/watch?v=xxxxx">
-                <div class="field-video-preview" data-video-preview="videos.work_video"></div>
-              </div>
             </div>
-          </div>
-
-        </section>
-
-        <!-- ===== 教育制度 ===== -->
-        <section class="admin-section" id="sec-education" style="display:none;">
-          <div class="admin-card">
-            <h3 class="admin-card-title">セクション設定</h3>
-            <div class="field"><label>サブタイトル</label><input type="text" data-field="texts.education_subtitle" value="「産学協同」の精神を受け継ぎ、人材育成に力を入れています"></div>
-          </div>
-          <div class="admin-card">
-            <h3 class="admin-card-title">教育カード 1</h3>
-            <div class="field"><label>タイトル</label><input type="text" data-field="texts.edu_title_1" value="表面処理技術研修"></div>
-            <div class="field"><label>説明</label><textarea data-field="texts.edu_desc_1" rows="3">最新の表面処理技術を学ぶ研修制度を整備。毎年1〜2名が受講し、専門知識とスキルを深めています。</textarea></div>
-          </div>
-          <div class="admin-card">
-            <h3 class="admin-card-title">教育カード 2</h3>
-            <div class="field"><label>タイトル</label><input type="text" data-field="texts.edu_title_2" value="文部科学省認定プログラム"></div>
-            <div class="field"><label>説明</label><textarea data-field="texts.edu_desc_2" rows="3">「職業実践力育成プログラム」に認定された集中講義を受講可能。過去5名が修了しています。</textarea></div>
-          </div>
-          <div class="admin-card">
-            <h3 class="admin-card-title">教育カード 3</h3>
-            <div class="field"><label>タイトル</label><input type="text" data-field="texts.edu_title_3" value="OJT・メンター制度"></div>
-            <div class="field"><label>説明</label><textarea data-field="texts.edu_desc_3" rows="3">先輩社員がマンツーマンで指導するOJT制度。実務を通じて着実にスキルアップできる環境です。</textarea></div>
           </div>
         </section>
 
-        <!-- ===== 福利厚生 ===== -->
+        <!-- ⑥ 福利厚生 -->
         <section class="admin-section" id="sec-benefits" style="display:none;">
           <div class="admin-card">
             <h3 class="admin-card-title">セクション設定</h3>
-            <div class="field"><label>サブタイトル</label><input type="text" data-field="texts.benefits_subtitle" value="安心して長く働ける環境を整えています"></div>
-            <div class="field"><label>画像</label>
-              <div class="upload-zone" data-upload="images.benefits_image" data-accept="image/*">
-                <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
-                <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
-              </div>
-            </div>
+            <div class="field"><label>セクションタイトル</label><input type="text" data-field="texts.benefits_title" value="充実の福利厚生"></div>
           </div>
           <div class="admin-card">
-            <h3 class="admin-card-title">福利厚生項目</h3>
-            <div class="benefit-editor">
-              <div class="benefit-editor-item">
-                <div class="field"><label>項目1 タイトル</label><input type="text" data-field="texts.benefit_title_1" value="住宅補助"></div>
-                <div class="field"><label>説明</label><input type="text" data-field="texts.benefit_desc_1" value="住宅手当の支給あり"></div>
-              </div>
-              <div class="benefit-editor-item">
-                <div class="field"><label>項目2 タイトル</label><input type="text" data-field="texts.benefit_title_2" value="退職金制度"></div>
-                <div class="field"><label>説明</label><input type="text" data-field="texts.benefit_desc_2" value="退職金制度完備"></div>
-              </div>
-              <div class="benefit-editor-item">
-                <div class="field"><label>項目3 タイトル</label><input type="text" data-field="texts.benefit_title_3" value="健康サポート"></div>
-                <div class="field"><label>説明</label><input type="text" data-field="texts.benefit_desc_3" value="各種社会保険完備・定期健康診断"></div>
-              </div>
-              <div class="benefit-editor-item">
-                <div class="field"><label>項目4 タイトル</label><input type="text" data-field="texts.benefit_title_4" value="休暇制度"></div>
-                <div class="field"><label>説明</label><input type="text" data-field="texts.benefit_desc_4" value="年次有給休暇・特別休暇"></div>
-              </div>
-              <div class="benefit-editor-item">
-                <div class="field"><label>項目5 タイトル</label><input type="text" data-field="texts.benefit_title_5" value="サークル活動"></div>
-                <div class="field"><label>説明</label><input type="text" data-field="texts.benefit_desc_5" value="野球部など社内サークル活動充実"></div>
-              </div>
-              <div class="benefit-editor-item">
-                <div class="field"><label>項目6 タイトル</label><input type="text" data-field="texts.benefit_title_6" value="福利厚生施設"></div>
-                <div class="field"><label>説明</label><input type="text" data-field="texts.benefit_desc_6" value="グループ会社によるサービス充実"></div>
-              </div>
-            </div>
+            <h3 class="admin-card-title">項目 1</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.benefit_title_1" value="住宅手当"></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.benefit_desc_1" rows="2">独身寮完備・住宅手当を支給。安心して新生活をスタートできます。</textarea></div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">項目 2</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.benefit_title_2" value="通勤手当"></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.benefit_desc_2" rows="2">交通費全額支給。マイカー通勤も可能です。</textarea></div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">項目 3</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.benefit_title_3" value="資格取得支援"></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.benefit_desc_3" rows="2">業務に関連する資格の取得費用を全額会社負担。スキルアップを応援します。</textarea></div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">項目 4</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.benefit_title_4" value="社員旅行・レクリエーション"></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.benefit_desc_4" rows="2">社員旅行や各種イベントを実施。部署を超えた交流の場があります。</textarea></div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">項目 5</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.benefit_title_5" value="健康支援"></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.benefit_desc_5" rows="2">定期健康診断、メンタルヘルスケア、インフルエンザ予防接種費用補助など。</textarea></div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">項目 6</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.benefit_title_6" value="休暇制度"></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.benefit_desc_6" rows="2">完全週休2日制、年間休日120日以上。有給休暇、慶弔休暇、育児・介護休暇制度あり。</textarea></div>
           </div>
         </section>
 
-        <!-- ===== サークル活動・地域貢献 ===== -->
-        <section class="admin-section" id="sec-activities" style="display:none;">
-          <div class="admin-card">
-            <h3 class="admin-card-title">セクション設定</h3>
-            <div class="field"><label>サブタイトル</label><input type="text" data-field="texts.activities_subtitle" value="仕事だけじゃない。仲間との絆を深める活動が充実しています。"></div>
-          </div>
-          <div class="admin-card">
-            <h3 class="admin-card-title">活動カード 1: 野球部</h3>
-            <div class="field"><label>タイトル</label><input type="text" data-field="texts.activity_title_1" value="野球部"></div>
-            <div class="field"><label>説明</label><textarea data-field="texts.activity_desc_1" rows="3">社内野球部が活動中。チームワークを大切にし、社員同士の交流の場となっています。</textarea></div>
-            <div class="field">
-              <label>画像</label>
-              <div class="upload-zone" data-upload="images.activity_image_1" data-accept="image/*">
-                <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
-                <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
-              </div>
-            </div>
-          </div>
-          <div class="admin-card">
-            <h3 class="admin-card-title">活動カード 2: リトルシニア支援</h3>
-            <div class="field"><label>タイトル</label><input type="text" data-field="texts.activity_title_2" value="リトルシニア支援"></div>
-            <div class="field"><label>説明</label><textarea data-field="texts.activity_desc_2" rows="3">日本リトルシニア中学硬式野球協会 関東連盟所属の「横須賀三浦リトルシニア」を応援。社有マイクロバスでの送迎など、地域の子どもたちの成長を支援しています。</textarea></div>
-            <div class="field">
-              <label>画像</label>
-              <div class="upload-zone" data-upload="images.activity_image_2" data-accept="image/*">
-                <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
-                <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
-              </div>
-            </div>
-          </div>
-          <div class="admin-card">
-            <h3 class="admin-card-title">活動カード 3: 地域イベント</h3>
-            <div class="field"><label>タイトル</label><input type="text" data-field="texts.activity_title_3" value="地域イベント"></div>
-            <div class="field"><label>説明</label><textarea data-field="texts.activity_desc_3" rows="3">国際フロンティアメッセ（みなと元気めっせ）に出展し「ベスト展示賞/特別賞」を受賞。地域社会への貢献にも積極的に取り組んでいます。</textarea></div>
-            <div class="field">
-              <label>画像</label>
-              <div class="upload-zone" data-upload="images.activity_image_3" data-accept="image/*">
-                <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
-                <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- ===== 募集要項 ===== -->
+        <!-- ⑦ 募集要項 -->
         <section class="admin-section" id="sec-requirements" style="display:none;">
           <div class="admin-card">
             <h3 class="admin-card-title">募集要項</h3>
@@ -432,19 +355,15 @@
             <div class="field"><label>募集職種</label><textarea data-field="texts.req_positions" rows="2">技術職（生産技術・品質管理・研究開発）、事務職（総務・経理・営業）</textarea></div>
             <div class="field"><label>応募資格</label><textarea data-field="texts.req_qualifications" rows="2">2027年3月に大学・大学院・短大・専門学校・高等専門学校を卒業見込みの方</textarea></div>
             <div class="field"><label>勤務地</label><input type="text" data-field="texts.req_location" value="本社工場（神奈川県横須賀市）、岩手工場（岩手県一関市）"></div>
+            <div class="field"><label>給与</label><input type="text" data-field="texts.req_salary" value="大卒：月給220,000円〜 / 院卒：月給240,000円〜"></div>
+            <div class="field"><label>勤務時間</label><input type="text" data-field="texts.req_hours" value="8:00〜17:00（休憩60分）"></div>
+            <div class="field"><label>休日</label><input type="text" data-field="texts.req_holidays" value="完全週休2日制（土・日）、祝日、GW、夏季休暇、年末年始"></div>
             <div class="field"><label>採用予定人数</label><input type="text" data-field="texts.req_count" value="6〜10名"></div>
             <div class="field"><label>選考フロー</label><input type="text" data-field="texts.req_flow" value="マイナビよりエントリー → 会社説明会 → 書類選考 → 面接（複数回） → 内定"></div>
           </div>
-          <div class="admin-card">
-            <h3 class="admin-card-title">イベント</h3>
-            <div class="field"><label>イベント1 タイトル</label><input type="text" data-field="texts.event_title_1" value="1DAY職場体験"></div>
-            <div class="field"><label>イベント1 説明</label><textarea data-field="texts.event_desc_1" rows="2">実際の製造現場を体験できるプログラムです。表面処理技術の世界を肌で感じてみませんか？</textarea></div>
-            <div class="field"><label>イベント2 タイトル</label><input type="text" data-field="texts.event_title_2" value="Webセミナー"></div>
-            <div class="field"><label>イベント2 説明</label><textarea data-field="texts.event_desc_2" rows="2">オンラインで参加可能な会社説明会。関東化成工業の魅力を詳しくご紹介します。</textarea></div>
-          </div>
         </section>
 
-        <!-- ===== エントリー ===== -->
+        <!-- ⑧ エントリー -->
         <section class="admin-section" id="sec-entry" style="display:none;">
           <div class="admin-card">
             <h3 class="admin-card-title">エントリーセクション</h3>
@@ -454,111 +373,21 @@
             <div class="field"><label>電話番号</label><input type="text" data-field="texts.entry_tel" value="046-835-4600"></div>
           </div>
         </section>
-        <!-- ===== 表示設定 ===== -->
+
+        <!-- 表示設定 -->
         <section class="admin-section" id="sec-display" style="display:none;">
           <div class="admin-card">
             <h3 class="admin-card-title">メディア表示設定</h3>
-            <p class="admin-card-desc">メインページ上の画像・動画の表示/非表示を切り替えます。OFFにするとそのメディアはページ上に表示されません。</p>
-
+            <p class="admin-card-desc">画像・動画の表示/非表示を切り替えます。</p>
             <div class="toggle-group">
-              <h4 class="toggle-group-title">ヒーローセクション</h4>
-              <div class="toggle-item">
-                <label class="toggle-label">
-                  <span>背景画像</span>
-                  <div class="toggle-switch">
-                    <input type="checkbox" data-field="visibility.hero_image" checked>
-                    <span class="toggle-slider"></span>
-                  </div>
-                </label>
-              </div>
-              <div class="toggle-item">
-                <label class="toggle-label">
-                  <span>背景動画（アップロード済みの場合）</span>
-                  <div class="toggle-switch">
-                    <input type="checkbox" data-field="visibility.hero_video" checked>
-                    <span class="toggle-slider"></span>
-                  </div>
-                </label>
-              </div>
+              <h4 class="toggle-group-title">ヒーロー</h4>
+              <div class="toggle-item"><label class="toggle-label"><span>背景画像</span><div class="toggle-switch"><input type="checkbox" data-field="visibility.hero_image" checked><span class="toggle-slider"></span></div></label></div>
+              <div class="toggle-item"><label class="toggle-label"><span>背景動画</span><div class="toggle-switch"><input type="checkbox" data-field="visibility.hero_video" checked><span class="toggle-slider"></span></div></label></div>
             </div>
-
             <div class="toggle-group">
-              <h4 class="toggle-group-title">私たちについて</h4>
-              <div class="toggle-item">
-                <label class="toggle-label">
-                  <span>画像1</span>
-                  <div class="toggle-switch">
-                    <input type="checkbox" data-field="visibility.about_image_1" checked>
-                    <span class="toggle-slider"></span>
-                  </div>
-                </label>
-              </div>
-              <div class="toggle-item">
-                <label class="toggle-label">
-                  <span>画像2</span>
-                  <div class="toggle-switch">
-                    <input type="checkbox" data-field="visibility.about_image_2" checked>
-                    <span class="toggle-slider"></span>
-                  </div>
-                </label>
-              </div>
-              <div class="toggle-item">
-                <label class="toggle-label">
-                  <span>会社紹介動画</span>
-                  <div class="toggle-switch">
-                    <input type="checkbox" data-field="visibility.about_video" checked>
-                    <span class="toggle-slider"></span>
-                  </div>
-                </label>
-              </div>
-            </div>
-
-            <div class="toggle-group">
-              <h4 class="toggle-group-title">仕事を知る</h4>
-              <div class="toggle-item">
-                <label class="toggle-label">
-                  <span>仕事カード画像（3枚）</span>
-                  <div class="toggle-switch">
-                    <input type="checkbox" data-field="visibility.work_images" checked>
-                    <span class="toggle-slider"></span>
-                  </div>
-                </label>
-              </div>
-              <div class="toggle-item">
-                <label class="toggle-label">
-                  <span>仕事紹介動画</span>
-                  <div class="toggle-switch">
-                    <input type="checkbox" data-field="visibility.work_video" checked>
-                    <span class="toggle-slider"></span>
-                  </div>
-                </label>
-              </div>
-            </div>
-
-            <div class="toggle-group">
-              <h4 class="toggle-group-title">福利厚生</h4>
-              <div class="toggle-item">
-                <label class="toggle-label">
-                  <span>福利厚生イメージ画像</span>
-                  <div class="toggle-switch">
-                    <input type="checkbox" data-field="visibility.benefits_image" checked>
-                    <span class="toggle-slider"></span>
-                  </div>
-                </label>
-              </div>
-            </div>
-
-            <div class="toggle-group">
-              <h4 class="toggle-group-title">サークル活動・地域貢献</h4>
-              <div class="toggle-item">
-                <label class="toggle-label">
-                  <span>活動カード画像（3枚）</span>
-                  <div class="toggle-switch">
-                    <input type="checkbox" data-field="visibility.activity_images" checked>
-                    <span class="toggle-slider"></span>
-                  </div>
-                </label>
-              </div>
+              <h4 class="toggle-group-title">会社紹介</h4>
+              <div class="toggle-item"><label class="toggle-label"><span>メイン画像</span><div class="toggle-switch"><input type="checkbox" data-field="visibility.about_image_1" checked><span class="toggle-slider"></span></div></label></div>
+              <div class="toggle-item"><label class="toggle-label"><span>会社紹介動画</span><div class="toggle-switch"><input type="checkbox" data-field="visibility.about_video" checked><span class="toggle-slider"></span></div></label></div>
             </div>
           </div>
         </section>
@@ -566,11 +395,10 @@
     </main>
   </div>
 
-  <!-- 公開確認モーダル -->
   <div class="modal-overlay" id="publish-modal" style="display:none;">
     <div class="modal">
       <h3 class="modal-title">本公開の確認</h3>
-      <p class="modal-text">現在の内容を公開ページに反映します。<br>この操作で公開ページが更新されます。よろしいですか？</p>
+      <p class="modal-text">現在の内容を公開ページに反映します。よろしいですか？</p>
       <div class="modal-actions">
         <button class="modal-btn modal-btn--cancel" id="publish-cancel">キャンセル</button>
         <button class="modal-btn modal-btn--confirm" id="publish-confirm">公開する</button>
@@ -578,7 +406,6 @@
     </div>
   </div>
 
-  <!-- トースト -->
   <div class="toast" id="toast">保存しました</div>
 
   <script src="storage.js"></script>
