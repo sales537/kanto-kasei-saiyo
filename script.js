@@ -4,16 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ===== Header scroll =====
   const header = document.getElementById("header");
-  let lastScroll = 0;
 
   window.addEventListener("scroll", () => {
-    const y = window.scrollY;
-    if (y > 50) {
+    if (window.scrollY > 50) {
       header.classList.add("scrolled");
     } else {
       header.classList.remove("scrolled");
     }
-    lastScroll = y;
   });
 
   // ===== Mobile nav =====
@@ -58,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     },
-    { threshold: 0.15 }
+    { threshold: 0.1 }
   );
   animEls.forEach((el) => observer.observe(el));
 
@@ -90,6 +87,36 @@ document.addEventListener("DOMContentLoaded", () => {
       if (progress < 1) requestAnimationFrame(update);
     }
     requestAnimationFrame(update);
+  }
+
+  // ===== Pie chart animation =====
+  const pieCharts = document.querySelectorAll(".pie-chart");
+  const circumference = 2 * Math.PI * 50; // r=50
+
+  const pieObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animatePie(entry.target);
+          pieObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+  pieCharts.forEach((el) => pieObserver.observe(el));
+
+  function animatePie(chart) {
+    const percent = parseFloat(chart.dataset.percent) || 0;
+    const fill = chart.querySelector(".pie-fill");
+    if (!fill) return;
+    const offset = circumference - (circumference * percent) / 100;
+    // Trigger reflow then animate
+    fill.style.strokeDasharray = circumference;
+    fill.style.strokeDashoffset = circumference;
+    requestAnimationFrame(() => {
+      fill.style.strokeDashoffset = offset;
+    });
   }
 
   // ===== Back to top =====
