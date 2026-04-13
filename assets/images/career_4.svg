@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200">
+  <defs>
+    <linearGradient id="c4bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8ecf6"/>
+      <stop offset="100%" stop-color="#f5f7fb"/>
+    </linearGradient>
+    <linearGradient id="bldg4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2d4ea6"/>
+      <stop offset="100%" stop-color="#1a2d6b"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="200" fill="url(#c4bg)"/>
+
+  <!-- 地面 -->
+  <rect x="0" y="165" width="320" height="35" fill="#eaeff8"/>
+
+  <!-- 背景ビル群 -->
+  <g>
+    <!-- 左ビル -->
+    <rect x="30" y="90" width="50" height="75" fill="#4a6fc4"/>
+    <g fill="#ffffff" opacity="0.6">
+      <rect x="36" y="100" width="6" height="6"/>
+      <rect x="48" y="100" width="6" height="6"/>
+      <rect x="60" y="100" width="6" height="6"/>
+      <rect x="72" y="100" width="6" height="6"/>
+      <rect x="36" y="112" width="6" height="6"/>
+      <rect x="48" y="112" width="6" height="6"/>
+      <rect x="60" y="112" width="6" height="6"/>
+      <rect x="72" y="112" width="6" height="6"/>
+      <rect x="36" y="124" width="6" height="6"/>
+      <rect x="48" y="124" width="6" height="6"/>
+      <rect x="60" y="124" width="6" height="6"/>
+      <rect x="72" y="124" width="6" height="6"/>
+      <rect x="36" y="136" width="6" height="6"/>
+      <rect x="48" y="136" width="6" height="6"/>
+      <rect x="60" y="136" width="6" height="6"/>
+      <rect x="72" y="136" width="6" height="6"/>
+      <rect x="36" y="148" width="6" height="6"/>
+      <rect x="48" y="148" width="6" height="6"/>
+      <rect x="60" y="148" width="6" height="6"/>
+      <rect x="72" y="148" width="6" height="6"/>
+    </g>
+
+    <!-- 中央ビル（本社・大きめ） -->
+    <rect x="120" y="40" width="80" height="125" fill="url(#bldg4)"/>
+    <polygon points="120,40 200,40 190,30 130,30" fill="#0f1f4d"/>
+    <g fill="#ffffff" opacity="0.75">
+      <rect x="128" y="50" width="8" height="8"/>
+      <rect x="142" y="50" width="8" height="8"/>
+      <rect x="156" y="50" width="8" height="8"/>
+      <rect x="170" y="50" width="8" height="8"/>
+      <rect x="184" y="50" width="8" height="8"/>
+      <rect x="128" y="64" width="8" height="8"/>
+      <rect x="142" y="64" width="8" height="8"/>
+      <rect x="156" y="64" width="8" height="8"/>
+      <rect x="170" y="64" width="8" height="8"/>
+      <rect x="184" y="64" width="8" height="8"/>
+      <rect x="128" y="78" width="8" height="8"/>
+      <rect x="142" y="78" width="8" height="8"/>
+      <rect x="156" y="78" width="8" height="8"/>
+      <rect x="170" y="78" width="8" height="8"/>
+      <rect x="184" y="78" width="8" height="8"/>
+      <rect x="128" y="92" width="8" height="8"/>
+      <rect x="142" y="92" width="8" height="8"/>
+      <rect x="156" y="92" width="8" height="8"/>
+      <rect x="170" y="92" width="8" height="8"/>
+      <rect x="184" y="92" width="8" height="8"/>
+      <rect x="128" y="106" width="8" height="8"/>
+      <rect x="142" y="106" width="8" height="8"/>
+      <rect x="156" y="106" width="8" height="8"/>
+      <rect x="170" y="106" width="8" height="8"/>
+      <rect x="184" y="106" width="8" height="8"/>
+      <rect x="128" y="120" width="8" height="8"/>
+      <rect x="142" y="120" width="8" height="8"/>
+      <rect x="156" y="120" width="8" height="8"/>
+      <rect x="170" y="120" width="8" height="8"/>
+      <rect x="184" y="120" width="8" height="8"/>
+      <rect x="128" y="134" width="8" height="8"/>
+      <rect x="142" y="134" width="8" height="8"/>
+      <rect x="156" y="134" width="8" height="8"/>
+      <rect x="170" y="134" width="8" height="8"/>
+      <rect x="184" y="134" width="8" height="8"/>
+    </g>
+    <!-- ロゴプレート -->
+    <rect x="150" y="148" width="20" height="12" fill="#c8a84e"/>
+    <!-- エントランス -->
+    <rect x="155" y="153" width="10" height="12" fill="#0f1f4d"/>
+
+    <!-- 右ビル -->
+    <rect x="230" y="100" width="60" height="65" fill="#2d4ea6"/>
+    <polygon points="230,100 290,100 285,92 235,92" fill="#1a2d6b"/>
+    <g fill="#ffffff" opacity="0.65">
+      <rect x="238" y="108" width="7" height="7"/>
+      <rect x="252" y="108" width="7" height="7"/>
+      <rect x="266" y="108" width="7" height="7"/>
+      <rect x="280" y="108" width="7" height="7"/>
+      <rect x="238" y="120" width="7" height="7"/>
+      <rect x="252" y="120" width="7" height="7"/>
+      <rect x="266" y="120" width="7" height="7"/>
+      <rect x="280" y="120" width="7" height="7"/>
+      <rect x="238" y="132" width="7" height="7"/>
+      <rect x="252" y="132" width="7" height="7"/>
+      <rect x="266" y="132" width="7" height="7"/>
+      <rect x="280" y="132" width="7" height="7"/>
+      <rect x="238" y="144" width="7" height="7"/>
+      <rect x="252" y="144" width="7" height="7"/>
+      <rect x="266" y="144" width="7" height="7"/>
+      <rect x="280" y="144" width="7" height="7"/>
+    </g>
+  </g>
+
+  <!-- 雲 -->
+  <g fill="#ffffff" opacity="0.7">
+    <ellipse cx="50" cy="35" rx="18" ry="7"/>
+    <ellipse cx="260" cy="45" rx="22" ry="8"/>
+  </g>
+
+  <!-- 上昇矢印（キャリアアップ） -->
+  <g transform="translate(290 90)">
+    <path d="M 0 -30 L -10 -15 L -4 -15 L -4 15 L 4 15 L 4 -15 L 10 -15 Z" fill="#c8a84e"/>
+  </g>
+
+  <!-- 年次バッジ -->
+  <g transform="translate(30 185)">
+    <rect x="0" y="-18" width="68" height="18" rx="9" fill="#c8a84e"/>
+    <text x="34" y="-5" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="10" fill="#233e91">10年目〜</text>
+  </g>
+</svg>

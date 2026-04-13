@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#dce4f4"/>
+      <stop offset="100%" stop-color="#f0f3fa"/>
+    </linearGradient>
+    <linearGradient id="bldgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2d4ea6"/>
+      <stop offset="100%" stop-color="#233e91"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#skyGrad)"/>
+
+  <!-- 背景の山/工業団地 -->
+  <path d="M 0 280 L 80 240 L 160 260 L 240 220 L 320 250 L 400 210 L 480 240 L 560 215 L 600 230 L 600 400 L 0 400 Z" fill="#c8d4ea" opacity="0.6"/>
+
+  <!-- 地面 -->
+  <rect x="0" y="300" width="600" height="100" fill="#eaeff8"/>
+
+  <!-- メイン工場/社屋 -->
+  <g>
+    <!-- 本館 -->
+    <rect x="200" y="140" width="200" height="160" fill="url(#bldgGrad)"/>
+    <!-- 屋根 -->
+    <polygon points="190,140 410,140 400,120 200,120" fill="#1a2d6b"/>
+    <!-- 窓グリッド -->
+    <g fill="#ffffff" opacity="0.85">
+      <rect x="215" y="155" width="28" height="20"/>
+      <rect x="253" y="155" width="28" height="20"/>
+      <rect x="291" y="155" width="28" height="20"/>
+      <rect x="329" y="155" width="28" height="20"/>
+      <rect x="367" y="155" width="28" height="20"/>
+      <rect x="215" y="185" width="28" height="20"/>
+      <rect x="253" y="185" width="28" height="20"/>
+      <rect x="291" y="185" width="28" height="20"/>
+      <rect x="329" y="185" width="28" height="20"/>
+      <rect x="367" y="185" width="28" height="20"/>
+      <rect x="215" y="215" width="28" height="20"/>
+      <rect x="253" y="215" width="28" height="20"/>
+      <rect x="291" y="215" width="28" height="20"/>
+      <rect x="329" y="215" width="28" height="20"/>
+      <rect x="367" y="215" width="28" height="20"/>
+    </g>
+    <!-- エントランス -->
+    <rect x="285" y="250" width="30" height="50" fill="#0f1f4d"/>
+    <!-- 社名プレート -->
+    <rect x="245" y="124" width="110" height="12" fill="#c8a84e"/>
+  </g>
+
+  <!-- 左側工場棟 -->
+  <g>
+    <rect x="50" y="200" width="140" height="100" fill="#4a6fc4"/>
+    <polygon points="50,200 120,170 190,200" fill="#3a5aa5"/>
+    <g fill="#ffffff" opacity="0.75">
+      <rect x="65" y="220" width="18" height="14"/>
+      <rect x="93" y="220" width="18" height="14"/>
+      <rect x="121" y="220" width="18" height="14"/>
+      <rect x="149" y="220" width="18" height="14"/>
+      <rect x="65" y="244" width="18" height="14"/>
+      <rect x="93" y="244" width="18" height="14"/>
+      <rect x="121" y="244" width="18" height="14"/>
+      <rect x="149" y="244" width="18" height="14"/>
+    </g>
+  </g>
+
+  <!-- 右側工場棟 -->
+  <g>
+    <rect x="410" y="210" width="140" height="90" fill="#4a6fc4"/>
+    <polygon points="410,210 480,180 550,210" fill="#3a5aa5"/>
+    <g fill="#ffffff" opacity="0.75">
+      <rect x="425" y="230" width="18" height="14"/>
+      <rect x="453" y="230" width="18" height="14"/>
+      <rect x="481" y="230" width="18" height="14"/>
+      <rect x="509" y="230" width="18" height="14"/>
+      <rect x="425" y="254" width="18" height="14"/>
+      <rect x="453" y="254" width="18" height="14"/>
+      <rect x="481" y="254" width="18" height="14"/>
+      <rect x="509" y="254" width="18" height="14"/>
+    </g>
+    <!-- 煙突 -->
+    <rect x="530" y="160" width="14" height="50" fill="#8a9fce"/>
+  </g>
+
+  <!-- 樹木 -->
+  <g>
+    <circle cx="30" cy="290" r="18" fill="#8fb38e"/>
+    <rect x="27" y="295" width="6" height="12" fill="#6d4f3c"/>
+    <circle cx="580" cy="290" r="16" fill="#8fb38e"/>
+    <rect x="577" y="295" width="6" height="12" fill="#6d4f3c"/>
+  </g>
+
+  <!-- 太陽の光 -->
+  <circle cx="480" cy="80" r="30" fill="#ffffff" opacity="0.7"/>
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a2d6b"/>
+      <stop offset="60%" stop-color="#233e91"/>
+      <stop offset="100%" stop-color="#2d4ea6"/>
+    </linearGradient>
+    <linearGradient id="chromeGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a8c0e8" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#4a6fc4" stop-opacity="0.7"/>
+    </linearGradient>
+    <pattern id="grid" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 0 0 80" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1920" height="900" fill="url(#bgGrad)"/>
+  <rect width="1920" height="900" fill="url(#grid)"/>
+
+  <!-- 工場ラインのシルエット -->
+  <g opacity="0.15" fill="#ffffff">
+    <rect x="0" y="680" width="1920" height="4"/>
+    <rect x="100" y="500" width="280" height="180" rx="4"/>
+    <rect x="420" y="420" width="320" height="260" rx="4"/>
+    <rect x="780" y="480" width="240" height="200" rx="4"/>
+    <rect x="1060" y="380" width="380" height="300" rx="4"/>
+    <rect x="1480" y="450" width="300" height="230" rx="4"/>
+    <!-- 煙突 -->
+    <rect x="500" y="280" width="40" height="140"/>
+    <rect x="1180" y="240" width="40" height="140"/>
+    <rect x="1280" y="260" width="40" height="120"/>
+  </g>
+
+  <!-- クロムめっき表現（円＋光沢） -->
+  <g opacity="0.25">
+    <circle cx="1500" cy="300" r="180" fill="url(#chromeGrad)"/>
+    <circle cx="1500" cy="300" r="180" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.5"/>
+    <circle cx="1440" cy="240" r="40" fill="#ffffff" opacity="0.4"/>
+  </g>
+  <g opacity="0.15">
+    <circle cx="320" cy="180" r="120" fill="url(#chromeGrad)"/>
+    <circle cx="320" cy="180" r="120" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+  </g>
+
+  <!-- 光の粒子 -->
+  <g fill="#ffffff">
+    <circle cx="200" cy="700" r="2" opacity="0.5"/>
+    <circle cx="450" cy="200" r="1.5" opacity="0.4"/>
+    <circle cx="800" cy="350" r="2" opacity="0.6"/>
+    <circle cx="1100" cy="150" r="1.5" opacity="0.3"/>
+    <circle cx="1400" cy="600" r="2" opacity="0.5"/>
+    <circle cx="1700" cy="400" r="1.5" opacity="0.4"/>
+  </g>
+</svg>
