@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320">
+  <defs>
+    <linearGradient id="a3bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8ecf6"/>
+      <stop offset="100%" stop-color="#f5f7fb"/>
+    </linearGradient>
+    <radialGradient id="globeGrad" cx="35%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#4a6fc4"/>
+      <stop offset="70%" stop-color="#233e91"/>
+      <stop offset="100%" stop-color="#1a2d6b"/>
+    </radialGradient>
+  </defs>
+  <rect width="480" height="320" fill="url(#a3bg)"/>
+
+  <text x="240" y="40" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="12" fill="#233e91" letter-spacing="3">GLOBAL NETWORK</text>
+
+  <!-- 地球 -->
+  <g transform="translate(240 155)">
+    <circle cx="0" cy="0" r="80" fill="url(#globeGrad)"/>
+    <!-- 経線 -->
+    <g fill="none" stroke="#ffffff" stroke-width="1" opacity="0.4">
+      <ellipse cx="0" cy="0" rx="80" ry="30"/>
+      <ellipse cx="0" cy="0" rx="80" ry="55"/>
+      <ellipse cx="0" cy="0" rx="25" ry="80"/>
+      <ellipse cx="0" cy="0" rx="55" ry="80"/>
+      <line x1="-80" y1="0" x2="80" y2="0"/>
+      <line x1="0" y1="-80" x2="0" y2="80"/>
+    </g>
+    <!-- 大陸シルエット -->
+    <g fill="#ffffff" opacity="0.5">
+      <!-- ユーラシア風 -->
+      <path d="M -30 -30 Q -10 -35 10 -28 Q 25 -20 30 -10 Q 35 0 25 5 Q 10 8 -5 2 Q -25 -5 -30 -15 Z"/>
+      <!-- 北米風 -->
+      <path d="M -55 -15 Q -45 -25 -35 -20 Q -30 -10 -40 0 Q -55 5 -60 -5 Z"/>
+      <!-- 南米風 -->
+      <path d="M -40 15 Q -32 15 -28 25 Q -30 40 -38 42 Q -44 30 -42 20 Z"/>
+      <!-- アジア/日本風 -->
+      <path d="M 35 -5 Q 45 -8 50 0 Q 48 8 40 8 Z"/>
+      <!-- 豪州風 -->
+      <path d="M 20 25 Q 35 22 42 30 Q 38 40 22 38 Z"/>
+      <!-- アフリカ風 -->
+      <path d="M -8 5 Q 5 5 8 15 Q 5 30 -5 32 Q -15 22 -10 12 Z"/>
+    </g>
+    <!-- 光沢 -->
+    <ellipse cx="-25" cy="-35" rx="20" ry="12" fill="#ffffff" opacity="0.3"/>
+  </g>
+
+  <!-- 拠点マーカー -->
+  <g>
+    <!-- 横須賀 -->
+    <g transform="translate(290 135)">
+      <circle cx="0" cy="0" r="5" fill="#c8a84e"/>
+      <circle cx="0" cy="0" r="10" fill="none" stroke="#c8a84e" stroke-width="1.5" opacity="0.6">
+        <animate attributeName="r" values="10;20;10" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.6;0;0.6" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <text x="10" y="-8" font-family="sans-serif" font-size="9" font-weight="700" fill="#233e91">横須賀</text>
+    </g>
+    <!-- 岩手 -->
+    <g transform="translate(300 115)">
+      <circle cx="0" cy="0" r="4" fill="#c8a84e"/>
+      <text x="8" y="-4" font-family="sans-serif" font-size="9" font-weight="700" fill="#233e91">岩手</text>
+    </g>
+    <!-- インドネシア -->
+    <g transform="translate(260 185)">
+      <circle cx="0" cy="0" r="5" fill="#c8a84e"/>
+      <circle cx="0" cy="0" r="10" fill="none" stroke="#c8a84e" stroke-width="1.5" opacity="0.6">
+        <animate attributeName="r" values="10;20;10" dur="2.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.6;0;0.6" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
+      <text x="10" y="14" font-family="sans-serif" font-size="9" font-weight="700" fill="#233e91">インドネシア</text>
+    </g>
+  </g>
+
+  <!-- 繋ぐ線 -->
+  <g stroke="#c8a84e" stroke-width="1.5" fill="none" opacity="0.7" stroke-dasharray="3 3">
+    <path d="M 290 135 Q 280 100 260 185"/>
+    <path d="M 290 135 Q 305 120 300 115"/>
+  </g>
+
+  <!-- 「700社以上」バッジ -->
+  <g transform="translate(80 230)">
+    <rect x="-40" y="-18" width="80" height="36" rx="18" fill="#233e91"/>
+    <text x="0" y="-1" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="12" fill="#c8a84e">700</text>
+    <text x="0" y="12" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#ffffff" font-weight="700">社以上</text>
+  </g>
+
+  <!-- キャプション -->
+  <text x="240" y="280" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="18" fill="#233e91">グローバル展開</text>
+  <text x="240" y="300" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#64748b">国内3拠点＋インドネシア / 取引先700社以上</text>
+</svg>
