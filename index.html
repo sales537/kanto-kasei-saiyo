@@ -31,12 +31,11 @@
       <nav id="nav-menu" class="nav">
         <ul class="nav-list">
           <li><a href="#about" class="nav-link">会社紹介</a></li>
-          <li><a href="#appeal" class="nav-link">私たちの強み</a></li>
           <li><a href="#numbers" class="nav-link">数字で見る</a></li>
+          <li><a href="#clubs" class="nav-link">部活動</a></li>
           <li><a href="#career" class="nav-link">キャリア</a></li>
           <li><a href="#benefits" class="nav-link">福利厚生</a></li>
           <li><a href="#requirements" class="nav-link">募集要項</a></li>
-          <li><a href="#company" class="nav-link">会社概要</a></li>
           <li><a href="#entry" class="nav-link nav-link--cta">エントリー</a></li>
         </ul>
       </nav>
@@ -60,6 +59,7 @@
       <div class="hero-nav" data-animate>
         <a href="#about" class="hero-nav-btn">会社を知る</a>
         <a href="#numbers" class="hero-nav-btn">数字で見る</a>
+        <a href="#clubs" class="hero-nav-btn">部活動</a>
         <a href="#career" class="hero-nav-btn">キャリア</a>
         <a href="#requirements" class="hero-nav-btn">募集要項</a>
         <a href="#entry" class="hero-nav-btn hero-nav-btn--accent">エントリー</a>
@@ -89,98 +89,40 @@
           </div>
         </div>
 
-        <div class="club-block" data-animate>
-          <div class="club-header">
-            <p class="section-label">Club &amp; Community</p>
-            <h3 class="club-title" data-content="club_title">部活動・地域貢献</h3>
-            <p class="club-lead" data-content="club_lead">仕事のその先にも、仲間と楽しむ時間があります。スポーツや地域との交流を通じて、社員同士の絆を深めています。</p>
+        <div class="strength-grid" data-animate>
+          <div class="strength-item">
+            <div class="strength-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l8 4v6c0 5-3.5 9.4-8 10-4.5-.6-8-5-8-10V6l8-4z"/><polyline points="9 12 11 14 15 10"/></svg>
+            </div>
+            <h4 data-content="strength_title_1">Tier1サプライヤー</h4>
+            <p data-content="strength_desc_1">トヨタはじめ700社以上との取引実績</p>
           </div>
-          <div class="club-grid">
-            <div class="club-card">
-              <div class="club-card-img" data-visibility="club_image_1">
-                <img src="assets/images/club_baseball.svg" alt="野球部" data-content-img="club_image_1">
-              </div>
-              <div class="club-card-body">
-                <h4 data-content="club_title_1">野球部</h4>
-                <p data-content="club_desc_1">社員有志による野球部。練習や大会を通じて、部署を越えた交流が生まれています。未経験者も大歓迎。仲間と汗を流すリフレッシュの時間です。</p>
-              </div>
+          <div class="strength-item">
+            <div class="strength-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20"/><path d="M2 12h20"/></svg>
             </div>
-            <div class="club-card">
-              <div class="club-card-img" data-visibility="club_image_2">
-                <img src="assets/images/club_community.svg" alt="地域スポーツ支援" data-content-img="club_image_2">
-              </div>
-              <div class="club-card-body">
-                <h4 data-content="club_title_2">地域スポーツ支援</h4>
-                <p data-content="club_desc_2">「横須賀三浦リトルシニア」へマイクロバスによる送迎を提供するなど、地域で頑張る子どもたちを応援しています。地元とともに歩む企業であり続けます。</p>
-              </div>
+            <h4 data-content="strength_title_2">世界初の技術</h4>
+            <p data-content="strength_desc_2">1963年プラめっき商品化の独自技術</p>
+          </div>
+          <div class="strength-item">
+            <div class="strength-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
             </div>
-            <div class="club-card">
-              <div class="club-card-img" data-visibility="club_image_3">
-                <img src="assets/images/club_other.svg" alt="サークル活動・社外表彰" data-content-img="club_image_3">
-              </div>
-              <div class="club-card-body">
-                <h4 data-content="club_title_3">サークル活動・社外表彰</h4>
-                <p data-content="club_desc_3">ゴルフ・フットサルなど有志サークルが活動中。国際フロンティアメッセへの出展ではベスト展示賞を受賞するなど、社外の舞台でも仲間と挑戦を続けています。</p>
-              </div>
+            <h4 data-content="strength_title_3">一貫生産体制</h4>
+            <p data-content="strength_desc_3">成形〜めっき〜塗装〜蒸着〜組付を自社で</p>
+          </div>
+          <div class="strength-item">
+            <div class="strength-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>
             </div>
+            <h4 data-content="strength_title_4">グローバル展開</h4>
+            <p data-content="strength_desc_4">国内3拠点＋インドネシア合弁工場</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ③ アピールポイント -->
-    <section class="section section--light-blue" id="appeal">
-      <div class="container">
-        <div class="section-header" data-animate>
-          <p class="section-label">Our Strengths</p>
-          <h2 class="section-title" data-content="appeal_title">関東化成が選ばれる理由</h2>
-        </div>
-        <div class="appeal-grid" data-animate>
-          <div class="appeal-card">
-            <div class="appeal-card-img">
-              <img src="assets/images/appeal_1.svg" alt="一貫生産体制" data-content-img="appeal_image_1">
-            </div>
-            <div class="appeal-card-body">
-              <span class="appeal-num">01</span>
-              <h3 data-content="appeal_title_1">一貫生産体制</h3>
-              <p data-content="appeal_desc_1">樹脂成形からめっき・塗装・蒸着・組付まで、すべてを自社で完結。高品質なモノづくりを実現しています。</p>
-            </div>
-          </div>
-          <div class="appeal-card">
-            <div class="appeal-card-img">
-              <img src="assets/images/appeal_2.svg" alt="世界初の技術力" data-content-img="appeal_image_2">
-            </div>
-            <div class="appeal-card-body">
-              <span class="appeal-num">02</span>
-              <h3 data-content="appeal_title_2">世界初の技術力</h3>
-              <p data-content="appeal_desc_2">プラめっきの商品化をはじめ、3価クロムめっきやサテンめっきなど、業界をリードする独自技術を保有しています。</p>
-            </div>
-          </div>
-          <div class="appeal-card">
-            <div class="appeal-card-img">
-              <img src="assets/images/appeal_3.svg" alt="グローバル展開" data-content-img="appeal_image_3">
-            </div>
-            <div class="appeal-card-body">
-              <span class="appeal-num">03</span>
-              <h3 data-content="appeal_title_3">グローバル展開</h3>
-              <p data-content="appeal_desc_3">国内3拠点に加え、インドネシアに合弁工場を展開。トヨタをはじめとする700社以上との取引実績があります。</p>
-            </div>
-          </div>
-          <div class="appeal-card">
-            <div class="appeal-card-img">
-              <img src="assets/images/appeal_4.svg" alt="充実の研修制度" data-content-img="appeal_image_4">
-            </div>
-            <div class="appeal-card-body">
-              <span class="appeal-num">04</span>
-              <h3 data-content="appeal_title_4">充実の研修制度</h3>
-              <p data-content="appeal_desc_4">産学協同の理念のもと、入社後の研修から技術習得まで、一人ひとりの成長を支援する体制が整っています。</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ④ 数字でわかる関東化成工業 -->
+    <!-- ③ 数字でわかる関東化成工業 -->
     <section class="section section--numbers" id="numbers">
       <div class="container">
         <div class="section-header" data-animate>
@@ -264,6 +206,55 @@
               <span class="pie-value">15.2<small>年</small></span>
             </div>
             <p class="chart-label" data-content="chart_label_4">平均勤続年数</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ④ 部活動の紹介 -->
+    <section class="section section--light-blue" id="clubs">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <p class="section-label">Club &amp; Community</p>
+          <h2 class="section-title" data-content="club_title">部活動・地域貢献</h2>
+          <p class="section-sub" data-content="club_lead">仕事のその先にも、仲間と楽しむ時間があります。スポーツや地域との交流を通じて、社員同士の絆を深めています。</p>
+        </div>
+        <div class="club-grid" data-animate>
+          <div class="club-card">
+            <div class="club-card-img" data-visibility="club_image_1">
+              <img src="assets/images/club_baseball.svg" alt="野球部" data-content-img="club_image_1">
+            </div>
+            <div class="club-card-body">
+              <h4 data-content="club_title_1">野球部</h4>
+              <p data-content="club_desc_1">社員有志による野球部。練習や大会を通じて、部署を越えた交流が生まれています。未経験者も大歓迎。仲間と汗を流すリフレッシュの時間です。</p>
+            </div>
+          </div>
+          <div class="club-card">
+            <div class="club-card-img" data-visibility="club_image_2">
+              <img src="assets/images/club_fishing.svg" alt="釣り部" data-content-img="club_image_2">
+            </div>
+            <div class="club-card-body">
+              <h4 data-content="club_title_2">釣り部</h4>
+              <p data-content="club_desc_2">会社所有の船で、釣り好きの有志が休日に海へ繰り出します。操船できる社員が中心となり、自然と仲間が広がる部活動です。</p>
+            </div>
+          </div>
+          <div class="club-card">
+            <div class="club-card-img" data-visibility="club_image_3">
+              <img src="assets/images/club_other.svg" alt="サークル活動・社外表彰" data-content-img="club_image_3">
+            </div>
+            <div class="club-card-body">
+              <h4 data-content="club_title_3">サークル活動・社外表彰</h4>
+              <p data-content="club_desc_3">ゴルフ・フットサルなど有志サークルが活動中。国際フロンティアメッセではベスト展示賞を受賞するなど、仕事外での挑戦の舞台も豊富です。</p>
+            </div>
+          </div>
+          <div class="club-card">
+            <div class="club-card-img" data-visibility="club_image_4">
+              <img src="assets/images/club_community.svg" alt="地域貢献" data-content-img="club_image_4">
+            </div>
+            <div class="club-card-body">
+              <h4 data-content="club_title_4">地域貢献</h4>
+              <p data-content="club_desc_4">「横須賀三浦リトルシニア」へマイクロバスによる送迎支援を行うなど、地域で頑張る子どもたちを応援。地元とともに歩む企業であり続けます。</p>
+            </div>
           </div>
         </div>
       </div>
@@ -361,6 +352,13 @@
           </div>
           <div class="benefit-card">
             <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11h18M5 11V8a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v3M5 11v7a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3v-7"/><path d="M9 15h6"/></svg>
+            </div>
+            <h3 data-content="benefit_title_7">社員食堂</h3>
+            <p data-content="benefit_desc_7">毎日の食事をサポート。栄養バランスのとれたメニューで日々の健康を支えます。</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
             </div>
             <h3 data-content="benefit_title_3">資格取得支援</h3>
@@ -387,16 +385,24 @@
             <h3 data-content="benefit_title_6">休暇制度</h3>
             <p data-content="benefit_desc_6">完全週休2日制、年間休日120日以上。有給休暇、慶弔休暇、育児・介護休暇制度あり。</p>
           </div>
+          <div class="benefit-card benefit-card--coming">
+            <span class="coming-badge" data-content="benefit_badge_8">Coming Soon</span>
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18"/><path d="M5 21V7l8-4 8 4v14"/><path d="M9 9h1M9 13h1M14 9h1M14 13h1M9 17h6"/></svg>
+            </div>
+            <h3 data-content="benefit_title_8">新社宅（2026年中完成予定）</h3>
+            <p data-content="benefit_desc_8">長く働ける環境づくりへの投資として、新しい社宅を建設中。完成後には快適な暮らしの拠点が生まれます。</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ⑦ 募集要項 -->
+    <!-- ⑦ 募集要項／会社概要 -->
     <section class="section" id="requirements">
       <div class="container">
         <div class="section-header" data-animate>
           <p class="section-label">Requirements</p>
-          <h2 class="section-title">募集要項</h2>
+          <h2 class="section-title">募集要項／会社概要</h2>
         </div>
         <div class="req-table" data-animate>
           <h3 class="req-table-title" data-content="req_type">新卒採用（2027年卒）</h3>
@@ -411,17 +417,9 @@
             <div class="info-row"><dt>選考フロー</dt><dd data-content="req_flow">マイナビよりエントリー → 会社説明会 → 書類選考 → 面接（複数回） → 内定</dd></div>
           </dl>
         </div>
-      </div>
-    </section>
 
-    <!-- ⑧ 会社概要 -->
-    <section class="section section--light-blue" id="company">
-      <div class="container">
-        <div class="section-header" data-animate>
-          <p class="section-label">Company Profile</p>
-          <h2 class="section-title">会社概要</h2>
-        </div>
-        <div class="company-table" data-animate>
+        <div class="req-table" data-animate>
+          <h3 class="req-table-title">会社概要</h3>
           <dl class="info-list">
             <div class="info-row"><dt>会社名</dt><dd data-content="company_name">関東化成工業株式会社（KANTO KASEI CO., LTD.）</dd></div>
             <div class="info-row"><dt>設立</dt><dd data-content="company_founded">1969年（昭和44年） ※1946年 旧制関東学院工業専門学校実習工場として創業</dd></div>
@@ -435,7 +433,7 @@
       </div>
     </section>
 
-    <!-- ⑨ エントリーCTA -->
+    <!-- ⑧ エントリーCTA -->
     <section class="section section--cta" id="entry">
       <div class="container">
         <div class="cta-inner" data-animate>
