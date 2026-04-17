@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200">
+  <defs>
+    <linearGradient id="fbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b8d4ec"/>
+      <stop offset="55%" stop-color="#87b5d8"/>
+      <stop offset="100%" stop-color="#3a6fa0"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a6fa0"/>
+      <stop offset="100%" stop-color="#1a3d6a"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="200" fill="url(#fbg)"/>
+
+  <!-- 太陽 -->
+  <circle cx="260" cy="50" r="18" fill="#f5d76e" opacity="0.9"/>
+  <circle cx="260" cy="50" r="24" fill="#f5d76e" opacity="0.3"/>
+
+  <!-- 雲 -->
+  <g fill="#ffffff" opacity="0.75">
+    <ellipse cx="80" cy="40" rx="22" ry="7"/>
+    <ellipse cx="180" cy="30" rx="26" ry="8"/>
+  </g>
+
+  <!-- 海 -->
+  <rect x="0" y="115" width="320" height="85" fill="url(#sea)"/>
+  <!-- 波 -->
+  <g stroke="#ffffff" stroke-width="1" fill="none" opacity="0.4">
+    <path d="M 0 125 Q 20 122 40 125 T 80 125 T 120 125 T 160 125 T 200 125 T 240 125 T 280 125 T 320 125"/>
+    <path d="M 0 140 Q 20 137 40 140 T 80 140 T 120 140 T 160 140 T 200 140 T 240 140 T 280 140 T 320 140" opacity="0.6"/>
+    <path d="M 0 160 Q 25 157 50 160 T 100 160 T 150 160 T 200 160 T 250 160 T 300 160 T 320 160" opacity="0.3"/>
+  </g>
+
+  <!-- 船（会社所有の船） -->
+  <g transform="translate(160 115)">
+    <!-- 船体 -->
+    <path d="M -50 0 L 50 0 L 42 18 L -42 18 Z" fill="#ffffff" stroke="#233e91" stroke-width="1.5"/>
+    <!-- デッキライン -->
+    <line x1="-48" y1="5" x2="48" y2="5" stroke="#233e91" stroke-width="0.5" opacity="0.6"/>
+    <!-- キャビン -->
+    <rect x="-18" y="-22" width="36" height="22" fill="#233e91"/>
+    <rect x="-14" y="-18" width="8" height="10" fill="#a8c8e8"/>
+    <rect x="-2" y="-18" width="8" height="10" fill="#a8c8e8"/>
+    <rect x="10" y="-18" width="8" height="10" fill="#a8c8e8"/>
+    <!-- アンテナ -->
+    <line x1="0" y1="-22" x2="0" y2="-34" stroke="#233e91" stroke-width="1.5"/>
+    <circle cx="0" cy="-34" r="1.5" fill="#d13a3a"/>
+    <!-- KK ロゴ -->
+    <rect x="-8" y="-12" width="16" height="6" fill="#c8a84e"/>
+    <text x="0" y="-7" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="5" fill="#233e91">KK</text>
+  </g>
+
+  <!-- 釣り竿 -->
+  <g transform="translate(140 95)">
+    <line x1="0" y1="0" x2="-80" y2="-40" stroke="#3a2d1f" stroke-width="2"/>
+    <!-- リール -->
+    <circle cx="-5" cy="-2" r="3" fill="#c8a84e"/>
+    <!-- 釣り糸 -->
+    <line x1="-80" y1="-40" x2="-70" y2="45" stroke="#ffffff" stroke-width="0.5" opacity="0.8"/>
+    <!-- ウキ -->
+    <circle cx="-71" cy="25" r="3" fill="#d13a3a"/>
+    <line x1="-71" y1="25" x2="-71" y2="32" stroke="#d13a3a" stroke-width="1"/>
+  </g>
+
+  <!-- 魚（ジャンプ） -->
+  <g transform="translate(90 145)">
+    <ellipse cx="0" cy="0" rx="12" ry="6" fill="#c8a84e"/>
+    <path d="M 10 0 L 18 -5 L 18 5 Z" fill="#c8a84e"/>
+    <circle cx="-6" cy="-1" r="1.2" fill="#233e91"/>
+    <path d="M -2 2 Q 2 4 6 2" fill="none" stroke="#233e91" stroke-width="0.5"/>
+    <!-- 水しぶき -->
+    <g fill="#ffffff" opacity="0.8">
+      <circle cx="-8" cy="10" r="1.5"/>
+      <circle cx="-4" cy="14" r="1"/>
+      <circle cx="12" cy="12" r="1.5"/>
+    </g>
+  </g>
+
+  <!-- タイトルバッジ -->
+  <g transform="translate(60 30)">
+    <rect x="0" y="-14" width="80" height="24" rx="12" fill="#233e91"/>
+    <text x="40" y="3" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="12" fill="#ffffff">釣り部</text>
+  </g>
+</svg>

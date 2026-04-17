@@ -25,13 +25,13 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
           会社紹介
         </a>
-        <a href="#sec-appeal" class="sidebar-link" data-section="sec-appeal">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          アピールポイント
-        </a>
         <a href="#sec-numbers" class="sidebar-link" data-section="sec-numbers">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
           数字で見る
+        </a>
+        <a href="#sec-clubs" class="sidebar-link" data-section="sec-clubs">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          部活動
         </a>
         <a href="#sec-career" class="sidebar-link" data-section="sec-career">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg>
@@ -43,11 +43,7 @@
         </a>
         <a href="#sec-requirements" class="sidebar-link" data-section="sec-requirements">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          募集要項
-        </a>
-        <a href="#sec-company" class="sidebar-link" data-section="sec-company">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
-          会社概要
+          募集要項／会社概要
         </a>
         <a href="#sec-entry" class="sidebar-link" data-section="sec-entry">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
@@ -149,12 +145,36 @@
             </div>
           </div>
           <div class="admin-card">
-            <h3 class="admin-card-title">部活動・地域貢献 セクション設定</h3>
-            <div class="field"><label>ブロックタイトル</label><input type="text" data-field="texts.club_title" value="部活動・地域貢献"></div>
+            <h3 class="admin-card-title">強みアイコン 1</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.strength_title_1" value="Tier1サプライヤー"></div>
+            <div class="field"><label>説明</label><input type="text" data-field="texts.strength_desc_1" value="トヨタはじめ700社以上との取引実績"></div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">強みアイコン 2</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.strength_title_2" value="世界初の技術"></div>
+            <div class="field"><label>説明</label><input type="text" data-field="texts.strength_desc_2" value="1963年プラめっき商品化の独自技術"></div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">強みアイコン 3</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.strength_title_3" value="一貫生産体制"></div>
+            <div class="field"><label>説明</label><input type="text" data-field="texts.strength_desc_3" value="成形〜めっき〜塗装〜蒸着〜組付を自社で"></div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">強みアイコン 4</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.strength_title_4" value="グローバル展開"></div>
+            <div class="field"><label>説明</label><input type="text" data-field="texts.strength_desc_4" value="国内3拠点＋インドネシア合弁工場"></div>
+          </div>
+        </section>
+
+        <!-- ④ 部活動 -->
+        <section class="admin-section" id="sec-clubs" style="display:none;">
+          <div class="admin-card">
+            <h3 class="admin-card-title">セクション設定</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.club_title" value="部活動・地域貢献"></div>
             <div class="field"><label>リード文</label><textarea data-field="texts.club_lead" rows="2">仕事のその先にも、仲間と楽しむ時間があります。スポーツや地域との交流を通じて、社員同士の絆を深めています。</textarea></div>
           </div>
           <div class="admin-card">
-            <h3 class="admin-card-title">部活動カード 1</h3>
+            <h3 class="admin-card-title">部活動カード 1（野球部）</h3>
             <div class="field"><label>タイトル</label><input type="text" data-field="texts.club_title_1" value="野球部"></div>
             <div class="field"><label>説明</label><textarea data-field="texts.club_desc_1" rows="3">社員有志による野球部。練習や大会を通じて、部署を越えた交流が生まれています。未経験者も大歓迎。仲間と汗を流すリフレッシュの時間です。</textarea></div>
             <div class="field"><label>画像</label>
@@ -165,9 +185,9 @@
             </div>
           </div>
           <div class="admin-card">
-            <h3 class="admin-card-title">部活動カード 2</h3>
-            <div class="field"><label>タイトル</label><input type="text" data-field="texts.club_title_2" value="地域スポーツ支援"></div>
-            <div class="field"><label>説明</label><textarea data-field="texts.club_desc_2" rows="3">「横須賀三浦リトルシニア」へマイクロバスによる送迎を提供するなど、地域で頑張る子どもたちを応援しています。地元とともに歩む企業であり続けます。</textarea></div>
+            <h3 class="admin-card-title">部活動カード 2（釣り部）</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.club_title_2" value="釣り部"></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.club_desc_2" rows="3">会社所有の船で、釣り好きの有志が休日に海へ繰り出します。操船できる社員が中心となり、自然と仲間が広がる部活動です。</textarea></div>
             <div class="field"><label>画像</label>
               <div class="upload-zone" data-upload="images.club_image_2" data-accept="image/*">
                 <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
@@ -176,9 +196,9 @@
             </div>
           </div>
           <div class="admin-card">
-            <h3 class="admin-card-title">部活動カード 3</h3>
+            <h3 class="admin-card-title">部活動カード 3（サークル・表彰）</h3>
             <div class="field"><label>タイトル</label><input type="text" data-field="texts.club_title_3" value="サークル活動・社外表彰"></div>
-            <div class="field"><label>説明</label><textarea data-field="texts.club_desc_3" rows="3">ゴルフ・フットサルなど有志サークルが活動中。国際フロンティアメッセへの出展ではベスト展示賞を受賞するなど、社外の舞台でも仲間と挑戦を続けています。</textarea></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.club_desc_3" rows="3">ゴルフ・フットサルなど有志サークルが活動中。国際フロンティアメッセではベスト展示賞を受賞するなど、仕事外での挑戦の舞台も豊富です。</textarea></div>
             <div class="field"><label>画像</label>
               <div class="upload-zone" data-upload="images.club_image_3" data-accept="image/*">
                 <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
@@ -186,53 +206,12 @@
               </div>
             </div>
           </div>
-        </section>
-
-        <!-- ③ アピールポイント -->
-        <section class="admin-section" id="sec-appeal" style="display:none;">
           <div class="admin-card">
-            <h3 class="admin-card-title">セクション設定</h3>
-            <div class="field"><label>セクションタイトル</label><input type="text" data-field="texts.appeal_title" value="関東化成が選ばれる理由"></div>
-          </div>
-          <div class="admin-card">
-            <h3 class="admin-card-title">アピールカード 1</h3>
-            <div class="field"><label>タイトル</label><input type="text" data-field="texts.appeal_title_1" value="一貫生産体制"></div>
-            <div class="field"><label>説明</label><textarea data-field="texts.appeal_desc_1" rows="3">樹脂成形からめっき・塗装・蒸着・組付まで、すべてを自社で完結。高品質なモノづくりを実現しています。</textarea></div>
+            <h3 class="admin-card-title">部活動カード 4（地域貢献）</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.club_title_4" value="地域貢献"></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.club_desc_4" rows="3">「横須賀三浦リトルシニア」へマイクロバスによる送迎支援を行うなど、地域で頑張る子どもたちを応援。地元とともに歩む企業であり続けます。</textarea></div>
             <div class="field"><label>画像</label>
-              <div class="upload-zone" data-upload="images.appeal_image_1" data-accept="image/*">
-                <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
-                <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
-              </div>
-            </div>
-          </div>
-          <div class="admin-card">
-            <h3 class="admin-card-title">アピールカード 2</h3>
-            <div class="field"><label>タイトル</label><input type="text" data-field="texts.appeal_title_2" value="世界初の技術力"></div>
-            <div class="field"><label>説明</label><textarea data-field="texts.appeal_desc_2" rows="3">プラめっきの商品化をはじめ、3価クロムめっきやサテンめっきなど、業界をリードする独自技術を保有しています。</textarea></div>
-            <div class="field"><label>画像</label>
-              <div class="upload-zone" data-upload="images.appeal_image_2" data-accept="image/*">
-                <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
-                <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
-              </div>
-            </div>
-          </div>
-          <div class="admin-card">
-            <h3 class="admin-card-title">アピールカード 3</h3>
-            <div class="field"><label>タイトル</label><input type="text" data-field="texts.appeal_title_3" value="グローバル展開"></div>
-            <div class="field"><label>説明</label><textarea data-field="texts.appeal_desc_3" rows="3">国内3拠点に加え、インドネシアに合弁工場を展開。トヨタをはじめとする700社以上との取引実績があります。</textarea></div>
-            <div class="field"><label>画像</label>
-              <div class="upload-zone" data-upload="images.appeal_image_3" data-accept="image/*">
-                <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
-                <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
-              </div>
-            </div>
-          </div>
-          <div class="admin-card">
-            <h3 class="admin-card-title">アピールカード 4</h3>
-            <div class="field"><label>タイトル</label><input type="text" data-field="texts.appeal_title_4" value="充実の研修制度"></div>
-            <div class="field"><label>説明</label><textarea data-field="texts.appeal_desc_4" rows="3">産学協同の理念のもと、入社後の研修から技術習得まで、一人ひとりの成長を支援する体制が整っています。</textarea></div>
-            <div class="field"><label>画像</label>
-              <div class="upload-zone" data-upload="images.appeal_image_4" data-accept="image/*">
+              <div class="upload-zone" data-upload="images.club_image_4" data-accept="image/*">
                 <div class="upload-zone-content"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><p>画像をアップロード</p></div>
                 <div class="upload-zone-preview"></div><button class="upload-zone-remove" title="削除" style="display:none;">&times;</button>
               </div>
@@ -240,7 +219,7 @@
           </div>
         </section>
 
-        <!-- ④ 数字で見る -->
+        <!-- ③ 数字で見る -->
         <section class="admin-section" id="sec-numbers" style="display:none;">
           <div class="admin-card">
             <h3 class="admin-card-title">数字（4項目）</h3>
@@ -369,9 +348,20 @@
             <div class="field"><label>タイトル</label><input type="text" data-field="texts.benefit_title_6" value="休暇制度"></div>
             <div class="field"><label>説明</label><textarea data-field="texts.benefit_desc_6" rows="2">完全週休2日制、年間休日120日以上。有給休暇、慶弔休暇、育児・介護休暇制度あり。</textarea></div>
           </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">項目 7（社員食堂）</h3>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.benefit_title_7" value="社員食堂"></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.benefit_desc_7" rows="2">毎日の食事をサポート。栄養バランスのとれたメニューで日々の健康を支えます。</textarea></div>
+          </div>
+          <div class="admin-card">
+            <h3 class="admin-card-title">項目 8（新社宅 Coming Soon）</h3>
+            <div class="field"><label>バッジ文言</label><input type="text" data-field="texts.benefit_badge_8" value="Coming Soon"></div>
+            <div class="field"><label>タイトル</label><input type="text" data-field="texts.benefit_title_8" value="新社宅（2026年中完成予定）"></div>
+            <div class="field"><label>説明</label><textarea data-field="texts.benefit_desc_8" rows="2">長く働ける環境づくりへの投資として、新しい社宅を建設中。完成後には快適な暮らしの拠点が生まれます。</textarea></div>
+          </div>
         </section>
 
-        <!-- ⑦ 募集要項 -->
+        <!-- ⑦ 募集要項／会社概要 -->
         <section class="admin-section" id="sec-requirements" style="display:none;">
           <div class="admin-card">
             <h3 class="admin-card-title">募集要項</h3>
@@ -385,12 +375,8 @@
             <div class="field"><label>採用予定人数</label><input type="text" data-field="texts.req_count" value="6〜10名"></div>
             <div class="field"><label>選考フロー</label><input type="text" data-field="texts.req_flow" value="マイナビよりエントリー → 会社説明会 → 書類選考 → 面接（複数回） → 内定"></div>
           </div>
-        </section>
-
-        <!-- ⑧ 会社概要 -->
-        <section class="admin-section" id="sec-company" style="display:none;">
           <div class="admin-card">
-            <h3 class="admin-card-title">会社概要テーブル</h3>
+            <h3 class="admin-card-title">会社概要</h3>
             <div class="field"><label>会社名</label><input type="text" data-field="texts.company_name" value="関東化成工業株式会社（KANTO KASEI CO., LTD.）"></div>
             <div class="field"><label>設立</label><input type="text" data-field="texts.company_founded" value="1969年（昭和44年） ※1946年 旧制関東学院工業専門学校実習工場として創業"></div>
             <div class="field"><label>本社所在地</label><input type="text" data-field="texts.company_address" value="〒239-0806 神奈川県横須賀市池田町4-4-1"></div>
@@ -429,8 +415,9 @@
             <div class="toggle-group">
               <h4 class="toggle-group-title">部活動・地域貢献</h4>
               <div class="toggle-item"><label class="toggle-label"><span>カード1 画像（野球部）</span><div class="toggle-switch"><input type="checkbox" data-field="visibility.club_image_1" checked><span class="toggle-slider"></span></div></label></div>
-              <div class="toggle-item"><label class="toggle-label"><span>カード2 画像（地域スポーツ支援）</span><div class="toggle-switch"><input type="checkbox" data-field="visibility.club_image_2" checked><span class="toggle-slider"></span></div></label></div>
-              <div class="toggle-item"><label class="toggle-label"><span>カード3 画像（サークル活動）</span><div class="toggle-switch"><input type="checkbox" data-field="visibility.club_image_3" checked><span class="toggle-slider"></span></div></label></div>
+              <div class="toggle-item"><label class="toggle-label"><span>カード2 画像（釣り部）</span><div class="toggle-switch"><input type="checkbox" data-field="visibility.club_image_2" checked><span class="toggle-slider"></span></div></label></div>
+              <div class="toggle-item"><label class="toggle-label"><span>カード3 画像（サークル・表彰）</span><div class="toggle-switch"><input type="checkbox" data-field="visibility.club_image_3" checked><span class="toggle-slider"></span></div></label></div>
+              <div class="toggle-item"><label class="toggle-label"><span>カード4 画像（地域貢献）</span><div class="toggle-switch"><input type="checkbox" data-field="visibility.club_image_4" checked><span class="toggle-slider"></span></div></label></div>
             </div>
           </div>
         </section>
